@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.wrap {
+    position: relative;
+}
+
+.main_visual {
+    position: relative;
+}
+
+#header {
+    position: absolute;
+    top: 10px; /* 조절할 top 값 입력 */
+    left: 10px; /* 조절할 left 값 입력 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 z-index 설정 */
+}

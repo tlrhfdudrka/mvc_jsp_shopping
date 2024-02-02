@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+#pd_edit_container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#pd_edit_contents {
+	max-width: 1100px;
+	min-width: 1100px;
+	width: 100%;
+	margin: 0 auto;
+	min-height: 800px;
+	padding-top : 150px;
+}
+
+#pd_edit_section {
+	display: flex;
+	justify-content: space-between;
+}
+
+#pd_edit_right {
+	width: 88%;
+}
+
+.pd_edit_table_div {
+	margin-top: 30px;
+}
+
+.pd_edit_table_div table {
+	border-collapse: collapse;
+	width: 800px;
+	border: 1px solid #ccc;
+}
+
+.pd_edit_table_div table th {
+	padding-left: 2px;
+	text-align: center;
+	font-size: 13px;
+	border: 1px solid #ccc;	
+	font-weight: 400;
+}
+
+.pd_edit_table_div table td {
+	height: 45px;	
+	padding-left: 20px;
+	font-size: 13px;
+	border: 1px solid #ccc;
+}
+
+#pd_edit_name,
+#pd_edit_file,
+#pd_edit_defile,
+#pd_edit_price,
+#pd_edit_cnt {
+	width: 400px;
+	height: 25px;
+	border: 1px solid gray;
+	padding: 0 0 0 10px;
+	text-align: left;
+}
+
+#pd_reEdit_btn {
+	float: right;
+	margin: 5px 50px 5px 0;
+	padding: 5px 10px;
+	background: white;
+	cursor: pointer;
+	border : 1px solid black;
+}
+

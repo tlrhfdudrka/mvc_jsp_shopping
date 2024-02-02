@@ -35,11 +35,6 @@
     cursor: pointer;
 }
 
-.dropdown_bar1:hover {
-    cursor: pointer;
-    color: gray;
-}
-
 .dropdown_content1 {
  	position: absolute;
     display: none;
@@ -63,13 +58,8 @@
     cursor: pointer;
 }
 
-.dropdown_bar2:hover {
-    cursor: pointer;
-    color: gray;
-}
-
 .dropdown_content2 {
-	margin-left: 575px;
+	margin-left: 570px;
  	position: absolute;
     display: none;
     margin-top: 30px;
@@ -92,13 +82,8 @@
     cursor: pointer;
 }
 
-.dropdown_bar3:hover {
-    cursor: pointer;
-    color: gray;
-}
-
 .dropdown_content3 {
-	margin-left: 1868px;
+	margin-left: 1855px;
  	position: absolute;
     display: none;
     margin-top: 30px;
@@ -135,3 +120,15 @@
     }
 }
 
+/* 드롭다운메뉴2 */
+#check-btn { 
+	display: none;
+}
+
+#check-btn:checked ~ .menubars { 
+display: block;
+} 
+
+.menubars {
+	display: none;
+}

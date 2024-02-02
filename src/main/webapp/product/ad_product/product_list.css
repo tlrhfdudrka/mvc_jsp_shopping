@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+#pd_list_container {
+   width: 100%;
+   margin: 0 auto;
+}
+
+#pd_list_contents {
+   max-width: 1100px;
+   width: 100%;
+   margin: 0 auto;
+   min-height: 800px;
+   padding-top: 150px;
+}
+
+#pd_list_section {
+   display: flex;
+   justify-content: space-between;
+}
+
+#pd_list_right {
+   width: 88%;
+}
+
+.ad_pd_list_table {
+   margin-top: 30px;
+}
+
+.ad_pd_list_table table {
+   border-collapse: collapse;
+   width: 800px;
+   border: 1px solid #ccc; 
+}
+
+.ad_pd_list_table th,
+.ad_pd_list_table td {
+   height: 50px;
+   text-align: center;
+   font-size: 14px;
+   padding: 5px;
+   border-bottom: 1px solid #ccc;
+   font-weight: 400;
+}
+
+#pd_name,
+#pd_file,
+#pd_price,
+#pd_cnt,
+#pd_code,
+#pd_ex {
+   width: 400px;
+   height: 25px;
+   border: 1px solid gray;
+   padding: 0 0 0 10px;
+   text-align: left;
+}
+
+.pd_list_img {
+   width: 80px;
+   height: 100px;
+}
+
+.pd_list_chk {
+   padding: 5px;
+   background: white;
+   cursor: pointer;
+   border: 1px solid black;
+}
+
+input[name="pd_list_btn"] {
+   background-color: white;
+   padding: 5px;
+   border: 1px solid black;
+   cursor: pointer;
+}
+
+form#pd_search {
+   padding-top: 50px;
+   font-size: 13px;
+}

@@ -80,8 +80,7 @@
 		                           <tr>
 		                              <th id="writerLabel" style="width: 60px"> 아이디 </th>
 		                              <td >
-		                                 <input style="width: 200px" type="text" class="input" name="user_id"
-		                                    id="user_id" size="30" placeholder="아이디 입력" required autofocus>
+		                                 <input style="width: 200px" type="text" class="input" name="user_id" id="user_id" size="30" value="admin01" readonly>
 		                              </td>
 		                              
 		                           </tr>
@@ -90,7 +89,7 @@
 		                               <th id="titleLabel" style="width: 60px"> 글제목 </th>
 		                               <td colspan="3" style="width: 750px">
 		                                  <input style="width: 670px" type="text" class="input" name="notice_title"
-		                                    id="notice_title" size="50" placeholder="글제목 입력" required>
+		                                    id="notice_title" size="50" placeholder="글제목 입력" required autofocus>
 		                               </td>
 		                           </tr>
 		                           

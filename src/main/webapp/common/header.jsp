@@ -32,8 +32,6 @@
 	    <input id="check-btn-cm" type="checkbox" />
 		    <label class="menu_cm" for="check-btn-cm">Community</label>
 		      <ul class="menubars-cm">
-		          <li><a href="${path}/customer/board/notice/noticeList.jsp">Notice</a></li>
-		          <li><a href="${path}/customer/board/review/board_reviewList.jsp">Review</a></li>
 		      </ul>
 		</div>      
 		

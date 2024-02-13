@@ -16,11 +16,11 @@ import pj.mvc.jsp.service.Ad_product_ServiceImpl;
 
 
 @WebServlet("*.pd")
-@MultipartConfig(location="D:\\dev\\worksapce\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload",
+@MultipartConfig(location="D:\\dev\\workspace\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload",
 	fileSizeThreshold=1024*1024, maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class Ad_product_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String IMG_UPLOAD_DIR = "D:\\dev\\worksapce\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload";
+	private static final String IMG_UPLOAD_DIR = "D:\\dev\\workspace\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload";
        
     public Ad_product_Controller() {
         super();

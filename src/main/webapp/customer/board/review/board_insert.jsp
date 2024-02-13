@@ -51,7 +51,7 @@ $(function(){ // 작성 페이지가 로딩되면
 
 				<!-- 상단 중앙1 시작 -->
 				<div id="section1">
-					<p align="center">Notice</p>
+					<p align="center">Review</p>
 				</div>
 
 				<!-- 상단 중앙2 시작 -->

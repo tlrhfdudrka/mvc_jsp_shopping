@@ -10,23 +10,6 @@
     <link rel="stylesheet" href="${path}/customer/product/us_product_detail/css/product_Top_detail.css" />
 	<link rel="stylesheet" href="${path}/common/css/header.css" />
 	<link rel="stylesheet" href="${path}/common/css/footer.css" />
-    <script>
-	    function count(action) {
-	        var countElement = document.getElementById("deouter_count");
-	        var count = parseInt(countElement.textContent);
-	        var priceElement = document.getElementById("deouter_sum");
-	        var price = parseInt(priceElement.textContent);
-	
-	        if (action === "deouter_minus" && count > 1) {
-	            count--;
-	        } else if (action === "deouter_plus") {
-	            count++;
-	        }
-	
-	        countElement.textContent = count;
-	        priceElement.textContent = count * parseInt("${dto.pd_price}");
-	    }
-	</script>
 </head>
 <body>
 	<div class="detop_wrap">	
@@ -56,41 +39,25 @@
 										    <div class="detop_text">
 										    	${dto.pd_name}<br><br>
 										    	${dto.pd_price}<br><br>
-										    	<hr><br>
-										    	<span>
-												   <input type="button" name="minus" value="-" class="deouter_minus" onclick="count('deouter_minus', ${dto.pd_price})">
-												   <span id="deouter_count">1</span>
-												   <input type="button" name="plus" value="+" class="deouter_plus" onclick="count('deouter_plus', ${dto.pd_price})">
-												   <span id="deouter_sum">${dto.pd_price}</span>
-												</span>    
-												<br><br>  	
-										    	<input type="button" value="ADD TO CART" id="detop_cart">
-										    	<br><br>
-											
-											    <button class="detop_main">DETAILS</button>
+										    	<hr><br><br>
+										    	<input type="button" value="ADD TO CART" id="detop_cart"><br>
+											    <div class="detop_main">DETAILS</div>
 												<div class="detop_sub">
 												  	${dto.pd_content}
 												</div>
-												<button class="deouter_main">SIZE GUIDE</button>
-												<div class="deouter_sub">
+												<div class="detop_main">SIZE GUIDE</div>
+												<div class="detop_sub">
 													FITTING SIZE : FREE
 												</div>
-												<button class="deouter_main">SHOPPING</button>
-												<div class="deouter_sub">
-												  	택배사 : CJ대한통운
-	
-													- 배송 기간 : 평균 2-5일 소요
-													  택배사 상황에 따라 배송 일정 변경 될 수 있습니다.
-													
-													- 프리오더 주문 제품의 경우 7-14일 소요되며, 입고 지연으로 인한 변동 발생할 수 있습니다.
-													
-													- 100,000원 이상 무료 배송이며, 100,000원 미만의 경우 배송비 2500원입니다.
-													   (도서/산간/제주 지역은 5500원입니다.)
+												<div class="detop_main">SHOPPING</div>
+												<div class="detop_sub">
+												  	택배사 : CJ대한통운<br><br>
+													- 배송 기간 : 평균 2-5일 소요<br>
+													 택배사 상황에 따라 배송 일정 변경 될 수 있습니다.
 												</div>
-												<button class="deouter_main">NOTICE</button>
-												<div class="deouter_sub">
-												  	교환 및 반품주소
-													- 03708 서울특별시 서대문구 연희맛로 2-3 2층 위드아웃썸머
+												<div class="detop_main">NOTICE</div>
+												<div class="detop_sub">
+												  	주소 : 03708 서울특별시 서대문구 연희맛로 2-3 2층 위드아웃썸머
 												</div>
 										  </div>
 										  <hr>
@@ -133,7 +100,5 @@
 		</div>
 		<!-- footer 끝 -->
 	</div>
-	
-	<script src="js/product_Top_detail.js"></script>
 </body>
 </html>

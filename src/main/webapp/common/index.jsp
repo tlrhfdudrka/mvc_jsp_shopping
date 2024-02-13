@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 
 <!-- css -->
-<link rel="stylesheet" href="${path}/header/header.css" />
-<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="common/css/header.css" />
+<link rel="stylesheet" href="common/css/main.css" />
 
 <title>main</title>
 </head>

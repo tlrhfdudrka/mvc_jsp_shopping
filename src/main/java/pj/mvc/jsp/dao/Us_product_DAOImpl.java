@@ -25,7 +25,7 @@ public class Us_product_DAOImpl implements Us_product_DAO {
 		try {
 			
 			Context context = new InitialContext();
-			dataSource = (DataSource)context.lookup("java:/comp/env/jdbc/mvc_jsp_shopping");
+			dataSource = (DataSource)context.lookup("java:/comp/env/jdbc/jsp_pj_team1");
 			
 		} catch (NamingException e) {
 			

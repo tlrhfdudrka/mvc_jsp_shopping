@@ -85,7 +85,7 @@
 								</table>
 							</form>
 
-							<div class="board-search">
+							<!-- <div class="board-search">
 								<div class="select-box">
 									<select value="게시판선택" class="time-select">
 										<option selected disabled>일주일</option>
@@ -105,7 +105,7 @@
 								<td><input type="search" class="search-box"></td>
 								<td><input type="submit" class="search-btn" value="검색"></td>
 							</div>	
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!-- 내용 종료 -->

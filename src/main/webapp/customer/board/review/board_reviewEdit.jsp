@@ -49,7 +49,7 @@
 
 				<!-- 상단 중앙1 시작 -->
 				<div id="section1">
-					<p align="center">Notice</p>
+					<p align="center">Review</p>
 				</div>
 
 				<!-- 상단 중앙2 시작 -->

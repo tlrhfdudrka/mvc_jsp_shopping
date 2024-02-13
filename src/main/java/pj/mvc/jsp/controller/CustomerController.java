@@ -57,7 +57,7 @@ public class CustomerController extends HttpServlet {
 		if(url.equals("/*.do") || url.equals("/index.do")) {
 			 System.out.println("<<< url ==> /index.do >>>");
 			 
-			 viewPage = "common/index.jsp";
+			 viewPage = "/common/index.jsp";
 		} 
 		
 		

@@ -10,7 +10,32 @@
 <link rel="stylesheet" href="${path}/common/css/header.css" />
 <link rel="stylesheet" href="${path}/common/css/footer.css" />
 <link rel="stylesheet" href="${path}/customer/order/css/payment.css">
-<script src="${path}/customer/order/js/payment.js" defer></script>
+<script type="text/javascript">
+$(function() {
+	
+	$('#payment_btn').click(function() {
+	
+		const recipient
+		const address
+		const phNum
+		
+		
+		
+		
+		
+		
+		
+		
+	});
+	
+	
+	
+	
+	
+});
+
+
+</script>
 </head>
 <body>
 

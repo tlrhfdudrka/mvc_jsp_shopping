@@ -87,7 +87,7 @@ $(function(){
 									<tr>
 										<td class="top-border" style="width: 100%">
 									</tr>
-									<tr>
+<!-- 									<tr>
 										<td class="board-title"> 댓글목록 </td>
 									</tr>
 									<tr>
@@ -102,7 +102,7 @@ $(function(){
 										
 										행복한 하루 보내세요 ~!<br>
 										 </td>
-									</tr>
+									</tr> -->
 
 								</table>
 								

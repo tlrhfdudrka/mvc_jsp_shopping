@@ -42,12 +42,12 @@
 										    	${dto.pd_price}<br><br>
 										    	<hr><br><br>
 										    	<!-- 세션값이 없을때 (로그인 X) -->
-												<c:if test="${sessionScope.sessionId == null}">
+												<c:if test="${sessionScope.sessionID == null}">
 													<input type="button" value="ADD TO CART" id="deouter_cart" onclick="window.location='${path}/login.do'">
 												</c:if>
 												<!-- 세션값이 있을때 (로그인 O) -->
-												<c:if test="${sessionScope.sessionId != null}">
-										    		<input type="button" value="ADD TO CART" id="deouter_cart" onclick="window.location='${path}/cart_pdchk_outer.ct?pd_num=${dto.pd_num}&user_id=${sessionScope.sessionId}'">
+												<c:if test="${sessionScope.sessionID != null}">
+										    		<input type="button" value="ADD TO CART" id="deouter_cart" onclick="window.location='${path}/cart_pdchk_outer.ct?pd_num=${dto.pd_num}&user_id=${sessionScope.sessionID}'">
 										    	</c:if>
 										    	<br>
 											    <div class="deouter_main">DETAILS</div>

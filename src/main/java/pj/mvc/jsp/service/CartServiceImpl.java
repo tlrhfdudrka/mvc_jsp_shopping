@@ -19,7 +19,8 @@ public class CartServiceImpl implements CartService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - cartPdListAction(req, res) >>");
 		
-		String s_user_id = "user01"; // 세션값 가져오기 
+		String s_user_id = (String)req.getSession().getAttribute("sessionID");
+		//String s_user_id = "user01"; // 세션값 가져오기 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
 		
@@ -94,7 +95,8 @@ public class CartServiceImpl implements CartService{
 	public void cart_pdchk_bottom(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("<< 서비스 - cart_pdchk_bottom(req, res) >>");
 		
-		String s_user_id = "user01"; // 세션값 가져오기 
+		String s_user_id = (String)req.getSession().getAttribute("sessionID");
+		// String s_user_id = "user01"; // 세션값 가져오기 
 		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
@@ -111,7 +113,9 @@ public class CartServiceImpl implements CartService{
 	public void cart_pdchk_outer(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("<< 서비스 - cart_pdchk_outer(req, res) >>");
 		
-		String s_user_id = "user01"; // 세션값 가져오기 
+		String s_user_id = (String)req.getSession().getAttribute("sessionID");
+		//String s_user_id = "user01"; // 세션값 가져오기 
+		
 		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
@@ -127,7 +131,9 @@ public class CartServiceImpl implements CartService{
 	public void cart_pdchk_top(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		System.out.println("<< 서비스 - cart_pdchk_top(req, res) >>");
 		
-		String s_user_id = "user01"; // 세션값 가져오기 
+		String s_user_id = (String)req.getSession().getAttribute("sessionID");
+		// String s_user_id = "user01"; // 세션값 가져오기 
+		
 		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
@@ -144,7 +150,9 @@ public class CartServiceImpl implements CartService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - cartPdAddAction(req, res) >>");
 		
-		String s_user_id = "user01"; // 세션값 가져오기
+		String s_user_id = (String)req.getSession().getAttribute("sessionID");
+		//String s_user_id = "user01"; // 세션값 가져오기
+		
 		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 //		int cart_cnt = Integer.parseInt(req.getParameter("cart_cnt"));
 		

@@ -313,9 +313,10 @@ public class CartDAOImpl implements CartDAO{
 		
 		try {
 			conn = dataSource.getConnection();
-			String sql = "SELECT * FROM pj_cart_tbl WHERE user_id = 'user01' AND pd_num = ? AND is_payment = 'y' AND is_delete = 'y'";
+			String sql = "SELECT * FROM pj_cart_tbl WHERE user_id = ? AND pd_num = ? AND is_payment = 'y' AND is_delete = 'y'";
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, pd_num);
+			pstmt.setString(1, user_id);
+			pstmt.setInt(2, pd_num);
 			
 			rs = pstmt.executeQuery();
 			if(rs.next()) {

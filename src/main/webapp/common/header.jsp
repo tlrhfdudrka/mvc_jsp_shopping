@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/setting.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -46,8 +47,15 @@
 		          <li><a href="${path}/customer/mypage/mypage.jsp">Mypage</a></li>
 		      </ul>
 		 </div>
-		      
-		<div class="bag"><a href="${path}/customer/cart/cartList.jsp">bag</a></div>   
+		<!-- 세션값이 없을때 (로그인 X) -->
+		<c:if test="${sessionScope.sessionID == null}">      
+			<div class="bag"><a href="${path}/login.do">bag</a></div>
+		</c:if>   
+		<!-- 세션값이 있을때 (로그인 O) -->
+		<c:if test="${sessionScope.sessionID != null}">
+			<div class="bag"><a href="${path}/cartList.ct">bag</a></div>
+		</c:if>
+		
 	</div> 
 </div>	    
 </body>

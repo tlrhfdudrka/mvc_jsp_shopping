@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/setting.jsp" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +19,9 @@
 		<input id="check-btn-shop" type="checkbox" />
 		    <label class="menu_shop" for="check-btn-shop">Shop</label>
 		      <ul class="menubars-shop">
-		          <li><a href="${path}/customer/product/us_product/product_Outer.jsp">Outer</a></li>
-		          <li><a href="${path}/customer/product/us_product/product_Top.jsp">Top</a></li>
-		          <li><a href="${path}/customer/product/us_product/product_Bottom.jsp">Bottom</a></li>
+		          <li><a href="${path}/product_Outer.uspd?category_num=1">Outer</a></li>
+		          <li><a href="${path}/product_Top.uspd?category_num=2">Top</a></li>
+		          <li><a href="${path}/product_Bottom.uspd?category_num=3">Bottom</a></li>
 		      </ul>
 		</div>
 		
@@ -30,12 +29,12 @@
 	    <input id="check-btn-cm" type="checkbox" />
 		    <label class="menu_cm" for="check-btn-cm">Community</label>
 		      <ul class="menubars-cm">
-		          <li><a href="${path}/customer/board/notice/noticeList.jsp">Notice</a></li>
-		          <li><a href="${path}/customer/board/review/board_reviewList.jsp">Review</a></li>
+		        <li><a href="${path}/noticeList.nt">Notice</a></li>
+                <li><a href="${path}/board_reviewList.rw">Review</a></li>
 		      </ul>
 		</div>      
 		
-		<div class="logo"><a href="#">WITHOUTSUMMER</a></div>      
+		<div class="logo"><a href="${path}/index.do">WITHOUTSUMMER</a></div>      
 		
 		<div class="account">      
 	    <input id="check-btn-ac" type="checkbox" />

@@ -74,21 +74,21 @@
 										<td class="paging" colspan="5" align="center">
 											
 											<!-- 페이징 처리 -->
-											<!-- 이전 버튼 활성화 -->
-											<c:if test="${paging.startPage > 0}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${paging.prev}"><i class="fa-solid fa-angle-left"></i></a>
-											</c:if>
-											
-											<!-- 페이지 번호 처리 -->
-											<c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${num}">${num}</a>
-											</c:forEach>
-											
-											<!-- 다음 버튼 활성화 -->
-											<c:if test="${paging.endPage < paging.pageCount}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${paging.next}"><i class="fa-solid fa-angle-right"></i></a>
-											</c:if>
-											<!-- 페이징 처리 끝 -->
+			                                 <!-- 이전 버튼 활성화 -->
+			                                 <c:if test="${paging.startPage > 0}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${paging.prev}"><i class="fa-solid fa-angle-left"></i></a>
+			                                 </c:if>
+			                                 
+			                                 <!-- 페이지 번호 처리 -->
+			                                 <c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${num}">${num}</a>
+			                                 </c:forEach>
+			                                 
+			                                 <!-- 다음 버튼 활성화 -->
+			                                 <c:if test="${paging.endPage < paging.pageCount}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${paging.next}"><i class="fa-solid fa-angle-right"></i></a>
+			                                 </c:if>
+			                                 <!-- 페이징 처리 끝 -->
 											
 										</td>
 									</tr>

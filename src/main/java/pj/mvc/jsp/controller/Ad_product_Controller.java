@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-import pj.mvc.jsp.util.ImageUploadHandler;
+import pj.mvc.jsp.util.pd_ImageUploadHandler;
 import pj.mvc.jsp.service.Ad_product_ServiceImpl;
 
 
 @WebServlet("*.pd")
-@MultipartConfig(location="D:\\dev\\worksapce\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload",
+@MultipartConfig(location="D:\\dev\\workspace\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload",
 	fileSizeThreshold=1024*1024, maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class Ad_product_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String IMG_UPLOAD_DIR = "D:\\dev\\worksapce\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload";
+	private static final String IMG_UPLOAD_DIR = "D:\\dev\\workspace\\mvc_jsp_shopping\\src\\main\\webapp\\resources\\upload";
        
     public Ad_product_Controller() {
         super();
@@ -48,7 +48,7 @@ public class Ad_product_Controller extends HttpServlet {
 		String contextPath = req.getContextPath(); 
 		String url = uri.substring(contextPath.length()); 
 		
-		ImageUploadHandler uploader = null;
+		pd_ImageUploadHandler uploader = null;
 		
 		Ad_product_ServiceImpl service = new Ad_product_ServiceImpl();
 		
@@ -79,7 +79,7 @@ public class Ad_product_Controller extends HttpServlet {
 			
             if(contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
 
-                uploader = new ImageUploadHandler();
+                uploader = new pd_ImageUploadHandler();
 
                 uploader.setUploadPath(IMG_UPLOAD_DIR); // 이미지 경로 전달
 
@@ -119,7 +119,7 @@ public class Ad_product_Controller extends HttpServlet {
 			
             if(contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
 
-                uploader = new ImageUploadHandler();
+                uploader = new pd_ImageUploadHandler();
 
                 uploader.setUploadPath(IMG_UPLOAD_DIR); // 이미지 경로 전달
 

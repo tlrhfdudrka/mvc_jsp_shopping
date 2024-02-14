@@ -13,7 +13,7 @@
 $(function(){
 	// 게시판 목록
 	$('#btnInsert').click(function(){
-		location.href="${path}/board/review/board_reviewList.jsp";		
+		location.href="${path}/board_reviewList.rw";		
 	});
 	
 	// 게시판 수정
@@ -70,9 +70,7 @@ $(function(){
 									<tr>
 										<td> <br><br> </td>
 									</tr>
-									<tr>
-										<td class="board-date"> 첨부파일 </td> <!-- 첨부파일 -->
-									</tr>
+									
 									<tr>
 										<td class="top-border" style="width: 100%">
 									</tr>
@@ -87,7 +85,7 @@ $(function(){
 									<tr>
 										<td class="top-border" style="width: 100%">
 									</tr>
-									<tr>
+<!-- 									<tr>
 										<td class="board-title"> 댓글목록 </td>
 									</tr>
 									<tr>
@@ -102,7 +100,7 @@ $(function(){
 										
 										행복한 하루 보내세요 ~!<br>
 										 </td>
-									</tr>
+									</tr> -->
 
 								</table>
 								

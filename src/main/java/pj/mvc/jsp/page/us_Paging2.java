@@ -32,10 +32,11 @@ public class us_Paging2 {
 		this.pageNum = pageNum;
 		
 		currentPage = Integer.parseInt(pageNum);
-		// System.out.println("===================");
 		
-		// System.out.println("pageNum : " + pageNum);
-		// System.out.println("currentPage : " + currentPage);
+		System.out.println("===================");
+		
+		System.out.println("pageNum : " + pageNum);
+		System.out.println("currentPage : " + currentPage);
 	}
 
 	public int getPageSize() {
@@ -149,8 +150,8 @@ public class us_Paging2 {
 		startRow = (currentPage - 1) * pageSize + 1; // 페이지당 시작번호 : start
 		endRow = currentPage * pageSize; // 페이지당 끝번호 : end
 		
-		// System.out.println("startRow : " + startRow);
-		// System.out.println("endRow : " + endRow);
+		System.out.println("startRow : " + startRow);
+		System.out.println("endRow : " + endRow);
 		
 		this.number = count - (currentPage - 1) * pageSize; // 페이지 번호 
 		
@@ -192,5 +193,7 @@ public class us_Paging2 {
 	            next = endPage + 1;
 	        }
 	    }
+	    
+	    System.out.println("pageNum : " + pageNum);
 	}
 }

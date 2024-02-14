@@ -23,7 +23,7 @@ public class Us_product_ServiceImpl implements Us_product_Service {
 		
 		String pageNum = req.getParameter("pageNum");
 		int category_num = Integer.parseInt(req.getParameter("category_num")); 
-		System.out.println(req.getParameter("category_num"));
+		System.out.println("category_num : " + req.getParameter("category_num"));
 		
 		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
 		Us_product_DAO dao = Us_product_DAOImpl.getInstance();
@@ -33,6 +33,8 @@ public class Us_product_ServiceImpl implements Us_product_Service {
 	    System.out.println("total : " + total);
 	    
 	    us_Paging2 us_Paging2 = new us_Paging2(pageNum);
+	    System.out.println("pageNum : " + us_Paging2.getPageNum());
+	    
 	    us_Paging2.setTotalCount(total);
 	    
 	    // 5-2단계. 상품 목록

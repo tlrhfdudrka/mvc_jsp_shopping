@@ -75,21 +75,21 @@ function delivery_input_chk() {
 								<tr>
 									<td class="delivery_address_td1">받는 사람*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="recipient" id="recipient" class="input">
+										<input type="text" name="recipient" id="recipient" class="input" value="${c_dto.user_name}">
 									</td>
 								</tr>
 								
 								<tr>
 									<td class="delivery_address_td1">주소*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="address" id="address" class="input">
+										<input type="text" name="address" id="address" class="input" value="${c_dto.user_address}">
 									</td>
 								</tr>
 								
 								<tr>
 									<td class="delivery_address_td1">휴대전화*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="phNum" id="phNum" class="input" placeholder="ex)  010-1111-1111">
+										<input type="text" name="phNum" id="phNum" class="input" placeholder="ex)  010-1111-2222" value="${c_dto.user_hp}">
 									</td>
 								</tr>
 							</table>				
@@ -153,7 +153,7 @@ function delivery_input_chk() {
 								<tr>
 									<td class="method_td2"><p>입금자명*</p></td>
 									<td class="method_td3">
-										<input type="text" name="depositor" id="depositor" class="input">
+										<input type="text" name="depositor" id="depositor" class="input" value="${c_dto.user_name}">
 									</td>
 								</tr>
 							</table>

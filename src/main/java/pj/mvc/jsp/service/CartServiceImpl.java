@@ -97,8 +97,9 @@ public class CartServiceImpl implements CartService{
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
 		// String s_user_id = "user01"; // 세션값 가져오기 
-		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
+		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
+		System.out.println("pd_num : " + pd_num);
 		CartDAO dao = CartDAOImpl.getInstance();
 		
 		int selectCnt = dao.cart_pdchk(s_user_id, pd_num);
@@ -116,7 +117,7 @@ public class CartServiceImpl implements CartService{
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
 		//String s_user_id = "user01"; // 세션값 가져오기 
 		
-		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
+		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
 		
@@ -134,7 +135,7 @@ public class CartServiceImpl implements CartService{
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
 		// String s_user_id = "user01"; // 세션값 가져오기 
 		
-		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
+		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
 		
@@ -153,7 +154,7 @@ public class CartServiceImpl implements CartService{
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
 		//String s_user_id = "user01"; // 세션값 가져오기
 		
-		int pd_num = 2; // getparameter로  상품상세페이지에서 받은 값 가져올 것 
+		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 //		int cart_cnt = Integer.parseInt(req.getParameter("cart_cnt"));
 		
 		CartDTO dto = new CartDTO();

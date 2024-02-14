@@ -107,6 +107,11 @@ td.bottom-border {
 	padding-top: 20px;
 }
 
+.paging a {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* 하단 검색창 */
 /* .board-search {
 	margin-top: 40px;
@@ -155,4 +160,10 @@ td.bottom-border {
 	outline: none;
 	width: 548px;
 	height: 40px;
+}
+
+.paging a {
+	margin-left: 10px;
+	margin-right: 5px;
+	font-size: 14px;
 }

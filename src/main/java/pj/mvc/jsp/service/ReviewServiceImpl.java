@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import pj.mvc.jsp.dao.ReviewDAO;
 import pj.mvc.jsp.dao.ReviewDAOImpl;
@@ -192,10 +193,15 @@ public class ReviewServiceImpl implements ReviewService {
 			throws ServletException, IOException {
 		System.out.println("서비스 - ReviewInsertAction");
 		
-		
+	    // 세션에서 사용자 아이디 가져오기
+	    HttpSession session = req.getSession();
+	    String sessionID = (String) session.getAttribute("sessionID");
+	    
+	    System.out.println("user_id=============" + sessionID);
+	    
 		// 3단계. 화면에서 입력받은 값을 가져온다.
 		ReviewDTO dto = new ReviewDTO();
-		
+		dto.setUser_id(sessionID);
 		dto.setReview_title(req.getParameter("title"));
 		dto.setReview_content(req.getParameter("content"));
 		

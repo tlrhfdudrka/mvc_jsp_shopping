@@ -197,7 +197,7 @@ function delivery_input_chk() {
 							
 							<tr>
 								<td id="agree_payment_td2">
-									<input type="button" name="payment_btn" value="결제하기" id="payment_btn">
+									<input type="submit" name="payment_btn" value="결제하기" id="payment_btn">
 								</td>
 							</tr>
 						</table>

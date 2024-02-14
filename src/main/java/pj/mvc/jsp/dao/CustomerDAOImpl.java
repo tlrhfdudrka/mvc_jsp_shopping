@@ -34,7 +34,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		try {
 			
 			Context context = new InitialContext();
-				dataSource = (DataSource)context.lookup("java:comp/env/jsp_pj_team1/mvc_jsp_shopping");
+				dataSource = (DataSource)context.lookup("java:comp/env/jdbc/jsp_pj_team1");
 				
 		}catch (NamingException e) {
 			e.printStackTrace();

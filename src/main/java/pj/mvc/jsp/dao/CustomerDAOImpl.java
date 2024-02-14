@@ -72,6 +72,8 @@ public class CustomerDAOImpl implements CustomerDAO {
 			 pstmt.setString(5,dto.getUser_email());
 			 pstmt.setString(6,dto.getUser_address());
 			
+		        
+			
 			 
 			 insertCnt = pstmt.executeUpdate();
 			 
@@ -102,16 +104,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 		try {
 			System.out.println("CustomerDAOImpl - idpasswordChk() try1");
 			conn = dataSource.getConnection();
-			System.out.println("CustomerDAOImpl - idpasswordChk() try2");
+			
 			String sql = "SELECT * FROM pj_user_tbl  "
 					+ "WHERE user_id = ? AND user_pwd = ? ";
-			System.out.println("CustomerDAOImpl - idpasswordChk() try3");		
+				
 					
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, strId);
 			pstmt.setString(2,strPassword);
 			rs = pstmt.executeQuery();
-			System.out.println("CustomerDAOImpl - idpasswordChk() try4");
+			
 			if(rs.next()) {
 				selectCnt = 1;
 			}

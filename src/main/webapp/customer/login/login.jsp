@@ -15,19 +15,14 @@
 
 </head>
 <body>
-			<div class="wrap">
+			
 			<!--header  -->
 			<%@ include file="/common/header.jsp" %>
 			
+			<div class="wrap">
 			<!--컨텐츠 시작  -->
-			
 			<div id="login-form">
 				<div id="contents">
-				<div class="caption">
-		  		<a href="" class="create-account">SIGN IN</a>
-		  		<a href="join.do" class="create-account_2">CREATE ACCOUNT</a>
-				</div>
-		        
 		        
 		        <c:if test = "${sessionScope.sessionID == null}">
 		        <form name ="loginform" action="loginAction.do" method="post" onsubmit="return validateForm()">
@@ -45,7 +40,7 @@
 		           
 		            <div class="btn-area">
 		                <button id="btn" type="submit" >SIGN IN</button>
-		                <button id="btn_2" type="submit" onclick="window.location='../join/join.do'">JOIN US</button>
+		                <button id="btn_2" type="submit" onclick="window.location='join.do'">JOIN US</button>
 		            </div>
 		        </form>
 		         </c:if>
@@ -54,7 +49,7 @@
                     <tr>
                         <td colspan ="2" align="center">
                         <h3>
-                            <span style = "color:#FF82AA"><b>${sessionScope.sessionID}</b></span>님
+                            <span style = "color:black"><b>${sessionScope.sessionID}</b></span>님
                         </h3>
                         </td>
                     </tr>
@@ -71,11 +66,12 @@
                    </tr>
                 </table>
 		         </c:if>
-		        
 		    </div>
 		</div>
-		<!--footer  -->
-		<%@ include file="/common/footer.jsp" %>
-</div>
+	</div>
+	
+	<!--footer  -->
+	<%@ include file="/common/footer.jsp" %>
+
 </body>
 </html>

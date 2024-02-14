@@ -78,10 +78,10 @@
 										<td colspan="5">
 											<input type="hidden" name="notice_num" value="${dto.notice_num}">
 											<input type="button" class="write-btn" value="목록" id="btnList">
-											<%-- <c:if test="${is_admin = y}"> --%>
+											<c:if test="${sessionScope.sessionID == 'admin01'}">  <!-- 세션이 있는 경우 : 로그인 성공 -->
 											<input type="button" class="write-btn" value="삭제" id="btnDelete">
 											<input type="button" class="write-btn" value="수정" id="btnEdit">
-											<%-- </c:if> --%>
+											</c:if>
 										</td>
 									</tr>
 									<tr>

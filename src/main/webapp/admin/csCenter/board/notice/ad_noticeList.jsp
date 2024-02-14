@@ -64,7 +64,7 @@
 										</tr>
 									</c:forEach>
 									<tr>
-									 	<c:if test="${sessionScope.sessionID != null}">  <!-- 세션이 있는 경우 : 로그인 성공 / 아래에 hidden으로 sessionID으로 가져와서 활성화시킬필요x -->
+									 	<c:if test="${sessionScope.sessionID == 'admin01'}">  <!-- 세션이 있는 경우 : 로그인 성공 -->
 											<td colspan="5" align="center"><input type="button"
 												class="write-btn" value="글작성" id="btnInsert"></td>
 										</c:if>	

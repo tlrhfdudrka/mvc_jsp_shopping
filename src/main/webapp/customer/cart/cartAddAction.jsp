@@ -12,14 +12,14 @@
 	<c:if test="${inseretCnt == 1}">
 		<script type="text/javascript">
 			alert("장바구니에 추가되었습니다.\n 장바구니로 이동 >>");
-			window.location="${path}/cartList.ct?user_id=${sessionScope.sessionId}";
+			window.location="${path}/cartList.ct";
 		</script>
 	</c:if>
 	
 	<c:if test="${inseretCnt != 1}">
 		<script type="text/javascript">
 			alert("장바구니 상품추가 실패");
-			window.location="${path}/cartList.ct?user_id=${sessionScope.sessionId}";
+			window.location="${path}/cartList.ct";
 		</script>
 	</c:if>
 </body>

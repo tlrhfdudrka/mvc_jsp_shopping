@@ -47,7 +47,7 @@
 												</c:if>
 												<!-- 세션값이 있을때 (로그인 O) -->
 												<c:if test="${sessionScope.sessionID != null}">
-										    		<input type="button" value="ADD TO CART" id="deouter_cart" onclick="window.location='${path}/cart_pdchk_outer.ct?pd_num=${dto.pd_num}&user_id=${sessionScope.sessionID}'">
+										    		<input type="button" value="ADD TO CART" id="deouter_cart" onclick="window.location='${path}/cart_pdchk_outer.ct?pd_num=${dto.pd_num}'">
 										    	</c:if>
 										    	<br>
 											    <div class="deouter_main">DETAILS</div>

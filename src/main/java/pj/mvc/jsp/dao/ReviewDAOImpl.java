@@ -302,16 +302,18 @@ public class ReviewDAOImpl implements ReviewDAO {
 		try {
 			
 			conn = dataSource.getConnection();
-			String sql = " INSERT INTO pj_review_tbl (review_num, review_title, review_content, review_img, review_date) "
-					+ "VALUES ((SELECT NVL(MAX(review_num)+1, 1) FROM pj_review_tbl), ?, ?, ?, sysdate) ";
+			String sql = " INSERT INTO pj_review_tbl (review_num, review_title, review_content, review_img, user_id, review_date) "
+					+ "VALUES ((SELECT NVL(MAX(review_num)+1, 1) FROM pj_review_tbl), ?, ?, ?, ?, sysdate) ";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getReview_title());
 			pstmt.setString(2, dto.getReview_content());
 			pstmt.setString(3, dto.getReview_img());
+			pstmt.setString(4, dto.getUser_id());
 			
 			insertCnt = pstmt.executeUpdate(); // 실행하라
-			
+			System.out.println("dto.getReview_title() : =======" + dto.getReview_title());
+			System.out.println("dto.getUser_id() : =======" + dto.getUser_id());
 			System.out.println("insertCnt : " + insertCnt);
 			
 		} catch(SQLException e) {

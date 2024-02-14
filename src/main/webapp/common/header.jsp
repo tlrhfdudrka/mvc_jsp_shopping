@@ -1,9 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@include file="/common/setting.jsp" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="/common/setting.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,10 +29,12 @@
 	    <input id="check-btn-cm" type="checkbox" />
 		    <label class="menu_cm" for="check-btn-cm">Community</label>
 		      <ul class="menubars-cm">
+		        <li><a href="${path}/noticeList.nt">Notice</a></li>
+                <li><a href="${path}/board_reviewList.rw">Review</a></li>
 		      </ul>
 		</div>      
 		
-		<div class="logo"><a href="#">WITHOUTSUMMER</a></div>      
+		<div class="logo"><a href="${path}/index.do">WITHOUTSUMMER</a></div>      
 		
 		<div class="account">      
 	    <input id="check-btn-ac" type="checkbox" />

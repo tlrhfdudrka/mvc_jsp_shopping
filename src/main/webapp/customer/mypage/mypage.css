@@ -16,15 +16,21 @@
   margin-bottom:100px;
 }
 
-#contents {
+#contents.clearfix {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   
 }
 
+.clearfix {
+	list-style-type: none;
+    margin-top: 30px;
+}
+
 .caption {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
+  
 }
 
 .create-account {

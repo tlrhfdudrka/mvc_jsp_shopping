@@ -2,6 +2,7 @@ package pj.mvc.jsp.dao;
 
 import java.util.List;
 
+import pj.mvc.jsp.dto.CustomerDTO;
 import pj.mvc.jsp.dto.OrderDTO;
 
 public interface OrderDAO {
@@ -20,7 +21,7 @@ public interface OrderDAO {
 	public List<OrderDTO> allPdList(String user_id);
 	
 	// 회원 정보 가져오기 (주소, 이름, 전화번호)
-	public OrderDTO userInfo(String user_id);
+	public CustomerDTO userInfo(String user_id);
 	
 	// 장바구니 선택상품 결제 총액 
 	public int orderTotalPrice1(String user_id);  

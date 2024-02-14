@@ -11,18 +11,14 @@
 <body>
 	<c:if test="${selectCnt == 1}">
 		<script type="text/javascript">
-			if(confirm("이미 장바구니에 담은 상품입니다.\n 장바구니로 이동하시겠습니까?")) {
-				window.location="${path}/cartList.ct?user_id=${sessionScope.sessionId}";
-			}
-			else {
-				window.location="${path}/product_Top_detail.uspd?pd_num=${pd_num}";
-			}
+			alert("이미 장바구니에 담은 상품입니다.\n 장바구니로 이동>>");
+			window.location="${path}/cartList.ct";
 		</script>
 	</c:if>
 	
 	<c:if test="${selectCnt != 1}">
 		<script type="text/javascript">
-			window.location="${path}/cartAddAction.ct?pd_num=${pd_num}&user_id=${sessionScope.sessionId}";
+			window.location="${path}/cartAddAction.ct?pd_num=${pd_num}";
 		</script>
 	</c:if>
 </body>

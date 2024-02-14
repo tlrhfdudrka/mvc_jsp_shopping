@@ -12,7 +12,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-import pj.mvc.jsp.dto.CartDTO;
+import pj.mvc.jsp.dto.CustomerDTO;
 import pj.mvc.jsp.dto.OrderDTO;
 
 public class OrderDAOImpl implements OrderDAO{
@@ -218,10 +218,45 @@ public class OrderDAOImpl implements OrderDAO{
 
 	// 회원 정보 가져오기 (주소, 이름, 전화번호)
 	@Override
-	public OrderDTO userInfo(String user_id) {
+	public CustomerDTO userInfo(String user_id) {
 		System.out.println("<< DAO - userInfo >>");
-		// 회원 dto생성하여 해야함(주희 dto필요)
-		return null;
+		
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs =  null;
+		// 회원 dto 선언
+		CustomerDTO dto = null;
+		
+		String sql = "select user_name, user_address, user_hp from pj_user_tbl where user_id = ?";
+		
+		try {
+			conn = dataSource.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user_id);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				dto = new CustomerDTO();
+				
+				dto.setUser_name(rs.getString("user_name"));
+				dto.setUser_address(rs.getString("user_address"));
+				dto.setUser_hp(rs.getString("user_hp"));
+				
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(conn != null) conn.close();
+				if(pstmt != null) pstmt.close();
+				if(rs != null) rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return dto;
 	}
 
 	// 장바구니 선택상품 결제 총액 

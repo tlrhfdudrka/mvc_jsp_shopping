@@ -29,7 +29,7 @@
 	    <input id="check-btn-cm" type="checkbox" />
 		    <label class="menu_cm" for="check-btn-cm">Community</label>
 		      <ul class="menubars-cm">
-		        <li><a href="${path}/noticeList.nt">Notice</a></li>
+		        <li><a href="${path}/ad_noticeList.nt">Notice</a></li>
                 <li><a href="${path}/board_reviewList.rw">Review</a></li>
 		      </ul>
 		</div>      

@@ -64,12 +64,12 @@
 										</tr>
 									</c:forEach>
 									<tr>
-									 	<%-- <c:if test="${sessionScope.sessionID != null}"> </c:if> --> <!-- 세션이 있는 경우 : 로그인 성공 / 아래에 hidden으로 sessionID으로 가져와서 활성화시킬필요x --%>
-										<%-- <c:if test="${is_admin = y}"> --%>
-										<td colspan="5" align="center"><input type="button"
-											class="write-btn" value="글작성" id="btnInsert"></td>
-										<%-- </c:if> --%>	
+									 	<c:if test="${sessionScope.sessionID != null}">  <!-- 세션이 있는 경우 : 로그인 성공 / 아래에 hidden으로 sessionID으로 가져와서 활성화시킬필요x -->
+											<td colspan="5" align="center"><input type="button"
+												class="write-btn" value="글작성" id="btnInsert"></td>
+										</c:if>	
 									</tr>
+									
 									<tr>
 										<td class="paging" colspan="5" align="center">
 											
@@ -113,7 +113,7 @@
 								</div>
 							<div class="search-wrap">
 								<!-- 아이디 세션값 가져오기 -->
-								<%-- <input type="hidden" name="hidden_Id" value="${sessionID}"> --%>
+								<input type="hidden" name="hidden_Id" value="${sessionID}">
 								<td><input type="search" class="search-box"></td>
 								<td><input type="submit" class="search-btn" value="검색"></td>
 							</div>	

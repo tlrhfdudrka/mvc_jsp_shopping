@@ -31,4 +31,6 @@ public interface CustomerService {
 		//회원정보 수정 처리
 		public void modifyCustomerAction(HttpServletRequest req, HttpServletResponse res)
 				throws ServletException, IOException;
-	}
+		
+	
+}

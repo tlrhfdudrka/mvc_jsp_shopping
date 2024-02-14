@@ -9,7 +9,7 @@ public class CustomerDTO {
     private String user_hp;         // 폰번호
     private String user_email;      // 이메일
     private String user_address;    // 받는사람주소
-   
+    private String is_admin;		//관리자 권한 여부
 
     // 디폴트 생성자
     public CustomerDTO() {
@@ -77,15 +77,26 @@ public class CustomerDTO {
     public void setUser_address(String user_address) {
         this.user_address = user_address;
     }
+    
+    public String getIs_admin() {
+        return is_admin;
+    }
+
+    public void setIs_admin(String is_admin) {
+        this.is_admin = is_admin;
+    }
+
+    
+	@Override
+	public String toString() {
+		return "CustomerDTO [user_id=" + user_id + ", user_pwd=" + user_pwd + ", user_name=" + user_name + ", user_hp="
+				+ user_hp + ", user_email=" + user_email + ", user_address=" + user_address + ", is_admin=" + is_admin
+				+ "]";
+	}
 
    
 
     
 
-    // toString 메서드
-    @Override
-    public String toString() {
-        return "CustomerDTO [user_id=" + user_id + ", user_pwd=" + user_pwd + ", user_name=" + user_name +
-               ", user_hp=" + user_hp + ", user_email=" + user_email + ", user_address=" + user_address + "]";
-    }
+   
 }

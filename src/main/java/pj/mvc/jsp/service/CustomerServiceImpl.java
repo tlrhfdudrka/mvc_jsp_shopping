@@ -35,6 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 		dto.setUser_hp(req.getParameter("user_hp"));
 		dto.setUser_email(req.getParameter("user_email"));
 		dto.setUser_address(req.getParameter("user_address"));
+		dto.setIs_admin(req.getParameter("is_admin")); // 관리자 권한 설정
 		//dto.setIs_admin(false);  // 기본적으로 관리자가 아님을 설정
 		
 		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
@@ -162,3 +163,5 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 }
+
+

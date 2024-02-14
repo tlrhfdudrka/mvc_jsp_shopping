@@ -19,9 +19,9 @@
 		<input id="check-btn-shop" type="checkbox" />
 		    <label class="menu_shop" for="check-btn-shop">Shop</label>
 		      <ul class="menubars-shop">
-		          <li><a href="${path}/customer/product/us_product/product_Outer.jsp">Outer</a></li>
-		          <li><a href="${path}/customer/product/us_product/product_Top.jsp">Top</a></li>
-		          <li><a href="${path}/customer/product/us_product/product_Bottom.jsp">Bottom</a></li>
+		          <li><a href="${path}/product_Outer.uspd?category_num=1">Outer</a></li>
+		          <li><a href="${path}/product_Top.uspd?category_num=2">Top</a></li>
+		          <li><a href="${path}/product_Bottom.uspd?category_num=3">Bottom</a></li>
 		      </ul>
 		</div>
 		

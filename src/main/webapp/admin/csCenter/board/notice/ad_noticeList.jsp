@@ -64,31 +64,31 @@
 										</tr>
 									</c:forEach>
 									<tr>
-									 	<%-- <c:if test="${sessionScope.sessionID != null}"> </c:if> --> <!-- 세션이 있는 경우 : 로그인 성공 / 아래에 hidden으로 sessionID으로 가져와서 활성화시킬필요x --%>
-										<%-- <c:if test="${is_admin = y}"> --%>
-										<td colspan="5" align="center"><input type="button"
-											class="write-btn" value="글작성" id="btnInsert"></td>
-										<%-- </c:if> --%>	
+									 	<c:if test="${sessionScope.sessionID == 'admin01'}">  <!-- 세션이 있는 경우 : 로그인 상태 -->
+											<td colspan="5" align="center"><input type="button"
+												class="write-btn" value="글작성" id="btnInsert"></td>
+										</c:if>	
 									</tr>
+									
 									<tr>
 										<td class="paging" colspan="5" align="center">
 											
 											<!-- 페이징 처리 -->
-											<!-- 이전 버튼 활성화 -->
-											<c:if test="${paging.startPage > 0}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${paging.prev}"><i class="fa-solid fa-angle-left"></i></a>
-											</c:if>
-											
-											<!-- 페이지 번호 처리 -->
-											<c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${num}">${num}</a>
-											</c:forEach>
-											
-											<!-- 다음 버튼 활성화 -->
-											<c:if test="${paging.endPage < paging.pageCount}">
-												<a href="${path}/ad_noticeList.nt?pageNum=${paging.next}"><i class="fa-solid fa-angle-right"></i></a>
-											</c:if>
-											<!-- 페이징 처리 끝 -->
+			                                 <!-- 이전 버튼 활성화 -->
+			                                 <c:if test="${paging.startPage > 0}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${paging.prev}"><i class="fa-solid fa-angle-left"></i></a>
+			                                 </c:if>
+			                                 
+			                                 <!-- 페이지 번호 처리 -->
+			                                 <c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${num}">${num}</a>
+			                                 </c:forEach>
+			                                 
+			                                 <!-- 다음 버튼 활성화 -->
+			                                 <c:if test="${paging.endPage < paging.pageCount}">
+			                                    <a href="${path}/ad_noticeList.nt?pageNum=${paging.next}"><i class="fa-solid fa-angle-right"></i></a>
+			                                 </c:if>
+			                                 <!-- 페이징 처리 끝 -->
 											
 										</td>
 									</tr>
@@ -113,7 +113,7 @@
 								</div>
 							<div class="search-wrap">
 								<!-- 아이디 세션값 가져오기 -->
-								<%-- <input type="hidden" name="hidden_Id" value="${sessionID}"> --%>
+								<input type="hidden" name="hidden_Id" value="${sessionID}">
 								<td><input type="search" class="search-box"></td>
 								<td><input type="submit" class="search-btn" value="검색"></td>
 							</div>	

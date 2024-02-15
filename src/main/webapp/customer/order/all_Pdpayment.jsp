@@ -10,7 +10,52 @@
 <link rel="stylesheet" href="${path}/common/css/header.css" />
 <link rel="stylesheet" href="${path}/common/css/footer.css" />
 <link rel="stylesheet" href="${path}/customer/order/css/payment.css">
-<script src="${path}/customer/order/js/payment.js" defer></script>
+<script type="text/javascript">
+function delivery_input_chk() {
+	
+	/* 받는 사람 입력 확인 */
+	if(!document.paymentform.recipient.value) {
+		alert("받는 사람을 입력하세요.");
+		document.paymentform.recipient.focus();
+		return false;
+	}
+	
+	/* 주소 입력 확인 */
+	if(!document.paymentform.address.value) {
+		alert("주소를 입력하세요");
+		document.paymentform.address.focus();
+		return false;
+	}
+	
+	/* 휴대전화 입력 확인 */
+	if(!document.paymentform.phNum.value) {
+		alert("휴대전화를 입력하세요");
+		document.paymentform.phNum.focus();
+		return false;
+	}
+	
+	/* 입금은행 입력 확인 */
+	if(!document.paymentform.bank_choice.value) {
+		alert("입금 은행을 선택해주세요.");
+		return false;
+	}
+	
+	/* 입금자명 입력 확인 */
+	if(!document.paymentform.depositor.value) {
+		alert("입금자명을 입력해주세요.");
+		document.paymentform.depositor.focus();
+		return false;
+	}
+	
+	/* 동의 체크박스 필수 체크 */
+	if(!document.paymentform.agree_chkbox.checked) {
+		alert("약관에 동의해주세요.");
+		return false;
+	}
+	
+	
+}
+</script>
 </head>
 <body>
 
@@ -22,7 +67,7 @@
 		<!-- 컨텐츠 시작 -->
 		<div class="payment_wrap">
 			<div id="payment_container">
-				<form name="paymentform" method="post" onsubmit="return delivery_input_chk()">
+				<form name="paymentform" method="post" action="${path}/allPdOrderPayment.od" onsubmit="return delivery_input_chk()">
 					<!-- 배송지  -->
 					<div id="delivery_address" class="div">
 						
@@ -31,21 +76,21 @@
 								<tr>
 									<td class="delivery_address_td1">받는 사람*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="recipient" id="recipient" class="input">
+										<input type="text" name="recipient" id="recipient" class="input" value="${c_dto.user_name}">
 									</td>
 								</tr>
 								
 								<tr>
 									<td class="delivery_address_td1">주소*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="address" id="address" class="input">
+										<input type="text" name="address" id="address" class="input" value="${c_dto.user_address}">
 									</td>
 								</tr>
 								
 								<tr>
 									<td class="delivery_address_td1">휴대전화*</td>
 									<td class="delivery_address_td2">
-										<input type="text" name="phNum" id="phNum" class="input" placeholder="ex)  01011112222">
+										<input type="text" name="phNum" id="phNum" class="input" placeholder="ex)  010-1111-2222" value="${c_dto.user_hp}">
 									</td>
 								</tr>
 							</table>				
@@ -69,17 +114,6 @@
 								</td>
 							</tr>
 							</c:forEach>
-							
-							<%-- <tr>
-								<td class="order_pd_td1">
-									<img class="pd_img" src="${path}/bag/product1.png">
-								</td>
-								<td class="order_pd_td2">
-									<p class="order_pd_td2_p1">Dear knit_ivory</p>
-									<p class="order_pd_td2_p2">수량: 1개</p>
-									<p class="order_pd_td2_p3">108,000원</p>
-								</td>
-							</tr> --%>
 							
 							<tr>
 								<td colspan="2"> 
@@ -108,7 +142,7 @@
 								<tr>
 									<td class="method_td2"><p>입금자명*</p></td>
 									<td class="method_td3">
-										<input type="text" name="depositor" id="depositor" class="input">
+										<input type="text" name="depositor" id="depositor" class="input" value="${c_dto.user_name}">
 									</td>
 								</tr>
 							</table>
@@ -152,9 +186,7 @@
 							
 							<tr>
 								<td id="agree_payment_td2">
-									<input type="button" name="payment_btn" value="결제하기" id="payment_btn"
-										onclick="window.location='${path}/allPdOrderPayment.od'"
-									>
+									<input type="submit" name="payment_btn" value="결제하기" id="payment_btn">
 								</td>
 							</tr>
 						</table>

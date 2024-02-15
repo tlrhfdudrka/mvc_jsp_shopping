@@ -35,6 +35,23 @@ public class CustomerController extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) 
 			throws ServletException, IOException {
 		
+		// 회원가입 과정에서 입력한 정보를 세션에 저장
+        String userId = req.getParameter("user_id");
+        String userPwd = req.getParameter("user_pwd");
+        String userName = req.getParameter("user_name");
+        String userAddress = req.getParameter("user_address");
+        String userHp = req.getParameter("user_hp");
+        String userEmail = req.getParameter("user_email");
+        
+        // 세션에 값들 저장
+        HttpSession session = req.getSession();
+        session.setAttribute("userId", userId);
+        session.setAttribute("userPwd", userPwd);
+        session.setAttribute("userName", userName);
+        session.setAttribute("userAddress", userAddress);
+        session.setAttribute("userHp", userHp);
+        session.setAttribute("userEmail", userEmail);
+
 		doGet(req, res);
 	}
 	
@@ -57,7 +74,7 @@ public class CustomerController extends HttpServlet {
 		if(url.equals("/*.do") || url.equals("/index.do")) {
 			 System.out.println("<<< url ==> /index.do >>>");
 			 
-			 viewPage = "common/index.jsp";
+			 viewPage = "/common/index.jsp";
 		} 
 		
 		

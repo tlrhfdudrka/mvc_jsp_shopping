@@ -51,7 +51,7 @@ $(function(){ // 작성 페이지가 로딩되면
 
 				<!-- 상단 중앙1 시작 -->
 				<div id="section1">
-					<p align="center">Notice</p>
+					<p align="center">Review</p>
 				</div>
 
 				<!-- 상단 중앙2 시작 -->
@@ -82,7 +82,7 @@ $(function(){ // 작성 페이지가 로딩되면
 		                           <tr>   
 		                               <th style="width: 100px">글내용</th>
 		                               <td colspan="3">
-		                                  <textarea rows="5" cols="93" name="content" id="content"></textarea>
+		                                  <textarea rows="5" cols="93" name="content" id="content" placeholder="글내용 입력"></textarea>
 		                               </td>
 		                           </tr>
 		                           <tr>

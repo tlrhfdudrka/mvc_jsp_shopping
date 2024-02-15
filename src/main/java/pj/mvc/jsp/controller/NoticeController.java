@@ -70,28 +70,6 @@ public class NoticeController extends HttpServlet {
 			dispatcher.forward(request, response);			
 		}
 		
-		/*
-		// 게시글 수정 삭제시 - 비밀번호 인증처리
-		else if(url.equals("/notice_pwd_chkAciton.nt")) {
-			System.out.println("<<< url ==> /notice_pwd_chkAciton.nt");
-			
-			int result = service.notice_pwd_chkAciton(request, response);
-			
-			if(result != 0) { // 인증성공시
-				viewPage ="admin/csCenter/board/notice/ad_notice_edit.jsp";
-				
-				RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-				dispatcher.forward(request, response);
-			}
-			else {	// 인증실패시 비밀번호 불일치로 그 페이지에 머물되 num과 error메세지를 넘긴다
-				System.out.println("<<< 비밀번호 불일치 >>>");
-				int num = Integer.parseInt(request.getParameter("hidden_num"));
-				viewPage = request.getContextPath() + "/ad_notice_detailAction.nt?num=" + num + "&message=error";
-				response.sendRedirect(viewPage);
-			}
-			
-		}*/
-		
 		// 게시글 수정 화면
 		else if(url.equals("/ad_notice_edit.nt")) {
 			System.out.println("<<< url ==> /ad_notice_edit.nt >>>");
@@ -140,30 +118,6 @@ public class NoticeController extends HttpServlet {
 			
 			viewPage = request.getContextPath() + "/ad_noticeList.nt";
 			response.sendRedirect(viewPage);
-		}
-		
-		// ---------------------- [ 회원 Controller ] ----------------------
-		
-		// 첫페이지
-		if(url.equals("/noticeList.nt")) {
-			System.out.println("<<< url ==> /noticeList.nt >>>");
-			
-			service.noticeListAction(request, response);
-			viewPage = "customer/board/notice/noticeList.jsp";
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-			dispatcher.forward(request, response);
-		}
-		
-		// 상세페이지
-		else if(url.equals("/notice_detailAction.nt")) {
-			System.out.println("<<< url ==> /notice_detailAction.nt");
-			
-			service.noticeDetailAction(request, response);
-			viewPage = "customer/board/notice/notice_detailAction.jsp";
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-			dispatcher.forward(request, response);			
 		}
 	}
 }

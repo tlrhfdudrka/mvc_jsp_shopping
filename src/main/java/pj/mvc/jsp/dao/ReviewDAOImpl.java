@@ -143,13 +143,6 @@ public class ReviewDAOImpl implements ReviewDAO {
 	      return total;
 	   }
 
-	// 조회수 증가
-	@Override
-	public void plusReadCnt(int num) {
-		System.out.println("ReviewDAOImpl - plusReadCnt");
-		
-		ReviewDTO dto = new ReviewDTO();
-	}
 
 	// 리뷰 게시글 상세페이지
 	@Override
@@ -205,11 +198,6 @@ public class ReviewDAOImpl implements ReviewDAO {
 	      return dto;
 	   }
 
-	// 리뷰 게시글 수정 삭제시 비밀번호 인증
-	@Override
-	public int password_chk(int num, int password) {
-		return 0;
-	}
 
 	// 리뷰 게시글 수정처리
 	@Override
@@ -302,16 +290,18 @@ public class ReviewDAOImpl implements ReviewDAO {
 		try {
 			
 			conn = dataSource.getConnection();
-			String sql = " INSERT INTO pj_review_tbl (review_num, review_title, review_content, review_img, review_date) "
-					+ "VALUES ((SELECT NVL(MAX(review_num)+1, 1) FROM pj_review_tbl), ?, ?, ?, sysdate) ";
+			String sql = " INSERT INTO pj_review_tbl (review_num, review_title, review_content, review_img, user_id, review_date) "
+					+ "VALUES ((SELECT NVL(MAX(review_num)+1, 1) FROM pj_review_tbl), ?, ?, ?, ?, sysdate) ";
 			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, dto.getReview_title());
 			pstmt.setString(2, dto.getReview_content());
 			pstmt.setString(3, dto.getReview_img());
+			pstmt.setString(4, dto.getUser_id());
 			
 			insertCnt = pstmt.executeUpdate(); // 실행하라
-			
+			System.out.println("dto.getReview_title() : =======" + dto.getReview_title());
+			System.out.println("dto.getUser_id() : =======" + dto.getUser_id());
 			System.out.println("insertCnt : " + insertCnt);
 			
 		} catch(SQLException e) {
@@ -328,93 +318,4 @@ public class ReviewDAOImpl implements ReviewDAO {
 		return insertCnt;
 	}
 
-	// 댓글작성 처리
-		@Override
-		public int commentInsert(ReviewCommentDTO dto) {
-			System.out.println("ReviewDAOImpl - commentInsert");
-			
-			int insertCnt = 0;
-			Connection conn = null;  // 오라클 연결
-			PreparedStatement pstmt = null; // SQL 문장
-			
-			try {
-				
-				conn = dataSource.getConnection();
-				String sql = " INSERT INTO pj_reviewCmt_tbl (review_cmt_num, review_num, review_cmt_content, review_date) "
-						+ "VALUES ((SELECT NVL(MAX(review_cmt_num)+1, 1) FROM pj_reviewCmt_tbl), ?, ?, sysdate) ";
-				
-				pstmt = conn.prepareStatement(sql);
-				pstmt.setInt(1, dto.getReview_num());
-				pstmt.setString(2, dto.getReview_cmt_content());
-				
-				insertCnt = pstmt.executeUpdate(); // 실행하라
-				
-				System.out.println("insertCnt : " + insertCnt);
-				
-			} catch(SQLException e) {
-				e.printStackTrace();
-			} finally {
-		         try {
-		             if(pstmt != null) pstmt.close();
-		             if(conn != null) conn.close();
-			          } catch(SQLException e) {
-		             e.printStackTrace();
-		          }
-		       }
-
-			return insertCnt;
-		}
-		
-		// 댓글목록 처리
-		@Override
-		public List<ReviewCommentDTO> commentList(int board_num) {
-			System.out.println("ReviewDAOImpl - commentList");
-			
-			  Connection conn = null;
-		      PreparedStatement pstmt = null;
-		      ResultSet rs = null;
-		      List<ReviewCommentDTO> list = new ArrayList<ReviewCommentDTO>();
-		      
-		      try {
-		         conn = dataSource.getConnection();
-		         String sql = "SELECT * FROM pj_reviewCmt_tbl "
-		         		+ "WHERE review_num = ? "
-		         		+ "ORDER BY review_cmt_num DESC ";
-		         pstmt = conn.prepareStatement(sql);
-		         pstmt.setInt(1, board_num);
-		         
-		         rs = pstmt.executeQuery();
-		    
-		         while(rs.next()) {
-		               // 2. dto 생성
-		        	   ReviewCommentDTO dto = new ReviewCommentDTO();
-		               
-		               // 3. dto에 1건의 rs 게시글 정보를 담는다.
-		               dto.setReview_cmt_num(rs.getInt("review_cmt_num"));
-		               dto.setReview_num(rs.getInt("review_num"));
-		               dto.setUser_id(rs.getString("user_id"));
-		               dto.setReview_cmt_content(rs.getString("review_cmt_content"));
-		               dto.setReview_date(rs.getDate("review_date"));
-		               
-		               // 4. list에 dto를 추가한다. 
-		               list.add(dto);
-		            } 
-		         
-		      } catch(SQLException e) {
-		         e.printStackTrace();
-		      } finally {
-		         try {
-		            if(rs != null) rs.close();
-		            if(pstmt != null) pstmt.close();
-		            if(conn != null) conn.close();
-		         } catch(SQLException e) {
-		            e.printStackTrace();
-		         }
-		      }
-		      
-		      // 5. list 리턴
-		      return list;
-		   }	
-		
-	
 }

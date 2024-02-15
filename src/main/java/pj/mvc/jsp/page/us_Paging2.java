@@ -2,7 +2,7 @@ package pj.mvc.jsp.page;
 
 public class us_Paging2 {
 
-	private int pageSize = 8;   // 1page당 게시글의 갯수를 지정
+	private int pageSize = 16;   // 1page당 게시글의 갯수를 지정
 	private int count = 0;         // 전체글의 갯수를 저장하는 변수
 	private int number = 0;      // 페이지번호
 	private String pageNum;
@@ -24,7 +24,7 @@ public class us_Paging2 {
 	public us_Paging2(String pageNum) {
 		
 		// 맨 처음 board_list.jsp를 클릭, 수정, 삭제 등 다른 게시글에서 페이지를 클릭할 때 pageNum이 없는 경우 null 처리
-		if(pageNum == null || pageNum.isEmpty()) {
+		if(pageNum == null) {
 			
 			pageNum = "1";
 		}
@@ -159,38 +159,51 @@ public class us_Paging2 {
 	}
 	
 	public void pageCalculator() {
-	    if(count > 0) {
-	        pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-
-	        startPage = 1;
-
-	        if(currentPage % 10 != 0) {
-	            startPage = (int)(currentPage / 10) * 10 + 1;
-	        } else {
-	            startPage = ((int)(currentPage / 10) - 1) * 10 + 1;
-	        }
-
-	        pageBlock = 10;
-	        endPage = startPage + pageBlock - 1;
-
-	        if(endPage > pageCount) {
-	            endPage = pageCount;
-	        }
-
-	        // 이전
-	        if(startPage > pageSize) {
-	            prev = startPage - 10;
-	        }
-
-	        // 다음
-	        if(startPage < pageCount) {
-	            next = startPage + 10;
-	        }
-
-	        // 페이지가 8개를 초과할 때 다음 버튼을 활성화합니다.
-	        if(pageCount > 8) {
-	            next = endPage + 1;
-	        }
-	    }
+		
+		if(count > 0) {
+			
+			pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
+			// System.out.println("pageCount : " + pageCount);
+			
+			startPage = 1;
+			
+			if(currentPage % 10 != 0) {
+				
+				startPage = (int)(currentPage / 10) * 10 + 1;
+			}
+			
+			else {
+				
+				startPage = ((int)(currentPage / 10) - 1) * 10 + 1;
+			}
+			
+			System.out.println("startPage : " + startPage);
+			
+			pageBlock = 16;
+			endPage = startPage + pageBlock - 1;
+			
+			if(endPage > pageCount) {
+				
+				endPage = pageCount;
+			}
+			
+			System.out.println("endPage : " + endPage);
+			
+			// 이전
+			if(startPage > pageSize) {
+				
+				prev = startPage - 10;
+			}
+			
+			// 다음
+			if(startPage < pageCount) {
+				
+				next = startPage + 10;
+			}
+			
+			System.out.println("pageNum : " + pageNum);
+			System.out.println("prev : " + prev);
+			System.out.println("next : " + next);
+		}
 	}
 }

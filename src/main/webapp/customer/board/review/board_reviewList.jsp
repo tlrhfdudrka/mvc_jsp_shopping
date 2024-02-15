@@ -64,28 +64,35 @@
 											<td class="bottom-border"> <br>  </td>
 										</tr>
 									</c:forEach>
+									<c:if test="${sessionScope.sessionID != null}"> 
 									<tr>
 										<td colspan="5" align="center"><input type="button"
 											class="write-btn" value="글작성" id="btnInsert"></td>
 									</tr>
+									</c:if>
 									<tr>
 										<td class="paging" colspan="5" align="center">
-											<!-- 페이징 처리 --> <!-- 이전 버튼 활성화 --> <c:if
-												test="${paging.startPage > 10}">
-												<a href="${path}/board_reviewList.rw?pageNum=${paging.prev}">[이전]</a>
-											</c:if> <!-- 페이지 번호 처리 --> <c:forEach var="num"
-												begin="${paging.startPage}" end="${paging.endPage}">
+											<!-- 페이징 처리 -->
+											 <!-- 이전 버튼 활성화 --> 
+											 <c:if	test="${paging.startPage > 0}">
+												<a href="${path}/board_reviewList.rw?pageNum=${paging.prev}"><!-- <i class="fa-solid fa-angle-left"></i> --></a>
+											</c:if>
+											
+											 <!-- 페이지 번호 처리 -->
+											 <c:forEach var="num" begin="${paging.startPage}" end="${paging.endPage}">
 												<a href="${path}/board_reviewList.rw?pageNum=${num}">${num}</a>
-											</c:forEach> <!-- 다음 버튼 활성화 --> <c:if
+											</c:forEach> 
+											<!-- 다음 버튼 활성화 --> 
+											<c:if
 												test="${paging.endPage < paging.pageCount}">
-												<a href="${path}/board_reviewList.rw?pageNum=${paging.next}">[다음]</a>
+												<a href="${path}/board_reviewList.rw?pageNum=${paging.next}"><i class="fa-solid fa-angle-right"></i></a>
 											</c:if>
 										</td>
 									</tr>
 								</table>
 							</form>
 
-							<div class="board-search">
+							<!-- <div class="board-search">
 								<div class="select-box">
 									<select value="게시판선택" class="time-select">
 										<option selected disabled>일주일</option>
@@ -105,7 +112,7 @@
 								<td><input type="search" class="search-box"></td>
 								<td><input type="submit" class="search-btn" value="검색"></td>
 							</div>	
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!-- 내용 종료 -->

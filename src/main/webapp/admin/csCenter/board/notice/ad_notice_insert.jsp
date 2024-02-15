@@ -80,8 +80,7 @@
 		                           <tr>
 		                              <th id="writerLabel" style="width: 60px"> 아이디 </th>
 		                              <td >
-		                                 <input style="width: 200px" type="text" class="input" name="user_id"
-		                                    id="user_id" size="30" placeholder="아이디 입력" required autofocus>
+		                                 <input style="width: 200px" type="text" class="input" name="user_id" id="user_id" size="30" value="admin01" readonly>
 		                              </td>
 		                              
 		                           </tr>
@@ -90,7 +89,7 @@
 		                               <th id="titleLabel" style="width: 60px"> 글제목 </th>
 		                               <td colspan="3" style="width: 750px">
 		                                  <input style="width: 670px" type="text" class="input" name="notice_title"
-		                                    id="notice_title" size="50" placeholder="글제목 입력" required>
+		                                    id="notice_title" size="50" placeholder="글제목 입력" required autofocus>
 		                               </td>
 		                           </tr>
 		                           
@@ -100,12 +99,6 @@
 		                                  <textarea rows="5" cols="93" name="notice_content" id="notice_content" onchange="handleTextarea()"></textarea>
 		                               </td>
 		                           </tr>
-		                           <!-- <tr>
-			                            <th id="fileLabel" style="width: 60px" > 첨부파일 </th>
-			                            <td colspan="2">
-											<input type="file" name="pd_file" id="pd_file" style="width: 100%;" value="파일첨부">
-										</td>
-			                        </tr> -->
 									<tr>
 										<td colspan="5" align="center">
 											<input type="hidden" name="notice_num" value="${dto.notice_num}">

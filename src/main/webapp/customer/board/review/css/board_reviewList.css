@@ -61,8 +61,8 @@
 
 /* 글쓰기 버튼 */
 .write-btn {
-   margin-top:3px;
-   /* float: right; */
+   margin-top:15px;
+   float: right;
    background-color: black;
   /*  margin: 0 auto; */
    font-size: 12px;
@@ -86,6 +86,11 @@ td.top-border {
 	border-top: 1px solid black;
 }
 
+.board-title a {
+    text-decoration-line: none;
+    color: inherit;
+}
+
 td.bottom-border {
 	padding-top: 5px;
     border-bottom: 1px solid black;
@@ -105,6 +110,11 @@ td.bottom-border {
 /* 페이지버튼 */
 .paging {
 	padding-top: 20px;
+}
+
+.paging a {
+	text-decoration: none;
+	color: inherit;
 }
 
 /* 하단 검색창 */
@@ -155,4 +165,10 @@ td.bottom-border {
 	outline: none;
 	width: 548px;
 	height: 40px;
+}
+
+.paging a {
+	margin-left: 10px;
+	margin-right: 5px;
+	font-size: 14px;
 }

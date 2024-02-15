@@ -62,7 +62,7 @@
 /* 글쓰기 버튼 */
 .write-btn {
    /* margin-top: 5px; */
-   /* float: right; */
+   float: right;
    background-color: black;
    /* margin: 0 auto; */
    font-size: 12px;
@@ -76,7 +76,7 @@
 
 .write-btn-2 {
    /* margin-top: 5px; */
-   /* float: right; */
+    float: right;
    background-color: white;
    /* margin: 0 auto; */
    font-size: 12px;
@@ -85,10 +85,11 @@
    align:left;
    margin-bottom: 5px;
    border: 1px solid lightgray;
+   margin-left: 5px;
 }
 
 td.top-border {
-	padding-bottom: 5px;
+	padding-bottom: 8px;
     border-top: 1px solid #ccc;
     
     }
@@ -104,7 +105,7 @@ td.top-border {
 }
 
 td.bottom-border {
-	padding-top: 5px;
+	padding-top: 4px;
     border-bottom: 1px solid #ccc;
 }
 

@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import pj.mvc.jsp.service.ReviewServiceImpl;
 import pj.mvc.jsp.util.ImageUploadHandler;
@@ -79,15 +80,14 @@ public class ReviewController extends HttpServlet {
 		service.reviewDetailAction(request, response);
 		viewPage = "customer/board/review/board_review.jsp";
 		
-		//RequestDispatcher : 서블릿 또는 JSP 요청을 받은 후, 다른 컴포넌트로 요청을 위임하는 클래스이다.
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
 		dispatcher.forward(request, response);
 	}
 	
 	
 		// 리뷰 게시글 수정 화면
-		else if(url.equals("/review_Edit.rw")) {	// 원래 "/review_Edit.rw"
-			System.out.println("<<<url ==> ///review_Edit.rw >>>");	//"<<<url ==> ///review_Edit.rw >>>"
+		else if(url.equals("/review_Edit.rw")) {	
+			System.out.println("<<<url ==> ///review_Edit.rw >>>");	
 			
 			service.ReviewUpdate(request, response);
 			viewPage = "customer/board/review/board_reviewEdit.jsp";
@@ -105,7 +105,7 @@ public class ReviewController extends HttpServlet {
 	          String contentType = request.getContentType();
 	          if(contentType != null && contentType.toLowerCase().startsWith("multipart/")) {
 	             uploader = new ImageUploadHandler();
-	             uploader.setUploadPath(IMG_UPLOAD_DIR);   // img 경로 setUploadPath() => 상단 private static final String IMG_UPLOAD_DIR
+	             uploader.setUploadPath(IMG_UPLOAD_DIR);   
 	             uploader.imageUpload(request, response);
 	          }
 	          
@@ -157,27 +157,6 @@ public class ReviewController extends HttpServlet {
 		  
 		   response.sendRedirect(viewPage); }
 		 
-//			
-//		
-//		//////////////////어드민/////////////////
-//		// 댓글 작성 처리
-//		else if(url.equals("/comment_insert.rw")) {
-//			System.out.println("<<<url ==> //comment_insert.rw >>>");
-//				
-//			service.commentAddAction(request, response); //5.
-//			
-//		}
-//		
-//		// 댓글 목록 처리
-//		else if(url.equals("/comment_list.rw")) {
-//			System.out.println("<<<url ==> //comment_list.rw >>>");
-//				
-//			service.commentListAction(request, response); 
-//			viewPage = "customer/admin/csCenter/comment_list.jsp"; //경로확인필요
-//			
-//			RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
-//			dispatcher.forward(request, response);
-//		}
 	}
 		
 }

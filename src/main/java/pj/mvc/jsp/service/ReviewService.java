@@ -16,10 +16,6 @@ public interface ReviewService {
 	public void reviewDetailAction(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;
 	
-	// 리뷰 게시글 수정 삭제시 비밀번호 인증
-	public int password_chkAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
-	
 	// 리뷰 게시글 수정처리 화면
 	public void ReviewUpdate(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;	
@@ -34,14 +30,5 @@ public interface ReviewService {
 	
 	// 리뷰 게시글 작성 처리
 	public void ReviewInsertAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
-	
-	//////////////어드민//////////////
-	// 리뷰 댓글작성 처리
-	public void commentAddAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
-	
-	// 리뷰 댓글목록 처리
-	public void commentListAction(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;
 }

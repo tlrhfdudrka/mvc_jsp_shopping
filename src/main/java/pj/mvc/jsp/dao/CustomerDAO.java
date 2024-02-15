@@ -21,6 +21,6 @@ public interface CustomerDAO {
 	
 	//회원정보 수정 처리
 	public int updateCustomer(CustomerDTO dto);
-
+	
 
 }

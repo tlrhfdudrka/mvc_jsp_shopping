@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import pj.mvc.jsp.dao.OrderDAOImpl;
+import pj.mvc.jsp.dto.CustomerDTO;
 import pj.mvc.jsp.dto.OrderDTO;
 
 public class OrderServiceImpl implements OrderService{
@@ -18,15 +19,17 @@ public class OrderServiceImpl implements OrderService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - selectPdOrderBefore(req, res) >>");
 		
-		String  user_id = "user01";
+		String user_id = (String)req.getSession().getAttribute("sessionID");
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
 		List<OrderDTO> list = dao.selectPdList(user_id);
 		int selectpdPrice = dao.orderTotalPrice1(user_id);
+		CustomerDTO c_dto = dao.userInfo(user_id);
 		
 		req.setAttribute("list", list);
 		req.setAttribute("selectpdPrice", selectpdPrice);
+		req.setAttribute("c_dto", c_dto);
 		
 	}
 	
@@ -36,7 +39,7 @@ public class OrderServiceImpl implements OrderService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - selectPdOrderPayment(req, res) >>");
 		
-		String  user_id = "user01";
+		String user_id = (String)req.getSession().getAttribute("sessionID");
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
@@ -52,15 +55,17 @@ public class OrderServiceImpl implements OrderService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - allPdOrderBefore(req, res) >>");
 		
-		String  user_id = "user01";
+		String user_id = (String)req.getSession().getAttribute("sessionID");
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
 		List<OrderDTO> list = dao.allPdList(user_id);
 		int selectpdPrice = dao.orderTotalPrice2(user_id);
+		CustomerDTO c_dto = dao.userInfo(user_id);
 		
 		req.setAttribute("list", list);
 		req.setAttribute("selectpdPrice", selectpdPrice);
+		req.setAttribute("c_dto", c_dto);
 	}	
 	
 	// 전체 결제 처리 
@@ -69,7 +74,7 @@ public class OrderServiceImpl implements OrderService{
 			throws ServletException, IOException {
 		System.out.println("<< 서비스 - allPdOrderPayment(req, res) >>");
 		
-		String  user_id = "user01";
+		String user_id = (String)req.getSession().getAttribute("sessionID");
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		

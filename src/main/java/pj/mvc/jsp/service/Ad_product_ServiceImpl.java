@@ -33,6 +33,12 @@ public class Ad_product_ServiceImpl implements Ad_product_Service {
 	    String fileName2 = (String) req.getAttribute("pd_img2");
 	    String fileName3 = (String) req.getAttribute("pd_detail_img");
 
+	    
+	    System.out.println(req.getAttribute("pd_img1"));
+		System.out.println(req.getAttribute("pd_img2"));
+		System.out.println(req.getAttribute("pd_detail_img"));
+		
+		
 	    String p_img1 = "/mvc_jsp_shopping/resources/upload/" + fileName1;
 	    String p_img2 = "/mvc_jsp_shopping/resources/upload/" + fileName2;
 	    String p_detail_img = "/mvc_jsp_shopping/resources/upload/" + fileName3;

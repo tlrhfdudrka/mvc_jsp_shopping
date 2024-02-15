@@ -72,7 +72,7 @@
 		            <div class="btn-area">
 		                <input class="btn" type="submit" value="회원정보수정">
 		                <input class="btn_1" type="submit" value="회원탈퇴">
-		                <input class="btn_2" type="button" value="취소" onclick="main()">
+		                <input class="btn_2" type="reset" value="취소" >
 		            </div>
 		        </c:if>
 		        

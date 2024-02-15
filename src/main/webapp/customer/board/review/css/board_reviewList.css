@@ -86,6 +86,11 @@ td.top-border {
 	border-top: 1px solid black;
 }
 
+.board-title a {
+    text-decoration-line: none;
+    color: inherit;
+}
+
 td.bottom-border {
 	padding-top: 5px;
     border-bottom: 1px solid black;

@@ -35,13 +35,4 @@ public interface ReviewService {
 	// 리뷰 게시글 작성 처리
 	public void ReviewInsertAction(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;
-	
-	//////////////어드민//////////////
-	// 리뷰 댓글작성 처리
-	public void commentAddAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
-	
-	// 리뷰 댓글목록 처리
-	public void commentListAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
 }

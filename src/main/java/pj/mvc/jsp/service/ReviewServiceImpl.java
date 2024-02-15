@@ -222,51 +222,5 @@ public class ReviewServiceImpl implements ReviewService {
 		
 	}
 
-	//////////////어드민//////////////
-	// 리뷰 댓글작성 처리
-	@Override
-	public void commentAddAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		System.out.println("서비스 - commentAddAction");
-		
-		// 3단게. 화면으로부터 입력받은 값을 받는다.
-		System.out.println("board_num : " + req.getParameter("board_num"));
-		System.out.println("writer : " + req.getParameter("writer"));
-		System.out.println("content : " + req.getParameter("content"));
-		
-		// 댓글 DTO 생성, setter
-		ReviewCommentDTO dto =new ReviewCommentDTO();
-		dto.setReview_num(Integer.parseInt(req.getParameter("board_num")));
-		//dto.setWriter(req.getParameter("writer"));
-		dto.setReview_cmt_content(req.getParameter("content"));
-		
-		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
-		ReviewDAO dao = ReviewDAOImpl.getInstance();
-		
-		// 5단계. 게시글 작성처리 후 컨트롤러에서 list로 이동
-		dao.commentInsert(dto);
-		
-	}
-
-	// 리뷰 댓글목록 처리
-	@Override
-	public void commentListAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		
-	System.out.println("서비스 - commentListAction");
-		
-		// 3단계. jQuery에서 입력받은 값을 가져온다. 보드디테일액션 data: 'board_num=${dto.num}',
-		int board_num =Integer.parseInt(req.getParameter("board_num"));
-		System.out.println("댓글번호 : " + board_num);
-		
-		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
-		ReviewDAO dao = ReviewDAOImpl.getInstance();
-		
-		// 5단계. 댓글목록 가져오기
-		List<ReviewCommentDTO> list = dao.commentList(board_num);
-		
-		// 6단계. jsp로 처리결과 전달
-		req.setAttribute("list", list);
-	}
 
 }

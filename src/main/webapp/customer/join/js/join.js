@@ -16,6 +16,18 @@
         	window.open(link);
         }
         
+     
+    function validateForm() {
+        var agreementChecked = document.getElementById("check_all").checked;
+        if (!agreementChecked) {
+            alert("체크박스에 체크해야 회원가입할 수 있습니다.");
+            return false; // 폼 제출을 막음
+        }
+        return true; // 폼을 제출함
+    }
+
+
+        
  
   
   

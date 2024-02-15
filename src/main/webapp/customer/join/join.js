@@ -9,13 +9,14 @@
     section.classList.toggle('active');
   }
   
-  //sign in 버튼 클릭시 넘어가기
-        function login() {
-            // JOIN US 버튼 클릭 시 회원가입 페이지로 이동
-            let link = "../login/login.jsp";
-        	window.open(link);
-        }
-        
- 
+  //동의함 체크박스
+	//function joinus() {
+	    //var agreement = document.getElementById("check_all").checked;
+	    //if (!agreement) {
+	       //alert("이용약관에 동의해야 합니다.");
+	        //return false; // 폼 제출을 막음
+	   // }
+	    //return true; // 폼 제출을 허용
+	//}
   
   

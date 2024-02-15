@@ -23,6 +23,10 @@
 			<!--컨텐츠 시작  -->
 			<div id="login-form">
 				<div id="contents">
+				 <div class="caption" >
+                <a href="" class="create-account" >SIGN IN</a>
+                <a href="join.do" class="create-account_2">CREATE ACCOUNT</a>
+                </div>
 		        
 		        <c:if test = "${sessionScope.sessionID == null}">
 		        <form name ="loginform" action="loginAction.do" method="post" onsubmit="return validateForm()">
@@ -37,13 +41,15 @@
 		                <label for="pw">Account Password</label>
 		                <label for="pw" class="right">Forgot Password?</label>
 		            </div>
-		           
 		            <div class="btn-area">
-		                <button id="btn" type="submit" >SIGN IN</button>
-		                <button id="btn_2" type="submit" onclick="window.location='join.do'">JOIN US</button>
+		                <button id="btn" type="submit" onclick="signIn()" >SIGN IN</button>
 		            </div>
 		        </form>
+		        	<div class="btn-area">
+		                <button id="btn_2" type="submit" onclick="window.location='join.do'">JOIN US</button>
+		            </div>
 		         </c:if>
+		         
 		         <c:if test = "${sessionScope.sessionID != null}">
 		         <table>
                     <tr>
@@ -58,7 +64,7 @@
                         <td colspan = "2" style = "border-bottom:none">
                         <br>
                         <div class="btn-area_2">
-                            <input class="btn" type="button" value="회원정보수정" onclick="window.location='modifyCustomer.do'">
+                            <input class="larger-btn" type="button" value="회원정보수정" onclick="window.location='modifyCustomer.do'">
                             <input class="btn_1" type="button" value="회원탈퇴" onclick="window.location='deleteCustomer.do'">
                             <input class="btn_2" type="button" value="로그아웃" onclick="window.location='logout.do'">
                         </div>
@@ -69,9 +75,7 @@
 		    </div>
 		</div>
 	</div>
-	
-	<!--footer  -->
-	<%@ include file="/common/footer.jsp" %>
-
 </body>
+<!--footer  -->
+	<%@ include file="/common/footer.jsp" %>
 </html>

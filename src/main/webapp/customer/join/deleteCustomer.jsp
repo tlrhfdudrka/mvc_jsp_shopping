@@ -23,15 +23,10 @@
 			
 			<div id="login-form">
 				<div id="contents">
-				<div class="caption">
-		  		<a href="" class="create-account">SIGN IN</a>
-		  		<a href="${path}/join/join.jsp" class="create-account_2">CREATE ACCOUNT</a>
-				</div>
-		        
-		        
+				
 		        <form name="loginform" action="deleteCustomerAction.do" method="post">
 		           
-		           <span style="color:#FF82AA"><b>${sessionID}</b></span>님 비밀번호를 입력하세요
+		           <span style="color:black"><b>${sessionID}</b></span>님 비밀번호를 입력하세요
 		            <div class="int-area">
 		                <input type="password" name="user_pwd" id="pw">
 		                <label for="pw">Account Password</label>
@@ -45,11 +40,8 @@
 		</form>
 	</div>
 </div>
+</div>
 		<!--footer  -->
 		<%@ include file="/common/footer.jsp" %>
-</div>
-
-
-
 </body>
 </html>

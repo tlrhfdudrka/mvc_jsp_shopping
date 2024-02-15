@@ -24,7 +24,7 @@
 			</ul>
 		</div>
 		<div class="company_info">
-			<p>COMPANY (주)위드아웃썸머 OWNER 박다은 E-MAIL withoutsummer.ac@gmail.com
+			<p>COMPANY (주)위드아웃썸머 OWNER OOO E-MAIL withoutsummer.ac@gmail.com
 			BUSINESS NO 505-88-01991</p>
 			<p>Mon–Fri. 11am – 5pm</p>
 			<p>ONLINE-ORDER NO 2021-서울서초-2832 ADDRESS: 06532 서울특별시 서초구 잠원동 46-7 삼정빌딩 5층 Sat / Sun / Holiday Off</p>

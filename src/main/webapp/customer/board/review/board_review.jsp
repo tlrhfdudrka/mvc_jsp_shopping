@@ -83,7 +83,7 @@ $(function(){
 										</td>
 									</tr>
 									<tr>
-										<td class="top-border" style="width: 100%">
+										<td class="bottom-border" style="width: 100%">
 									</tr>
 <!-- 									<tr>
 										<td class="board-title"> 댓글목록 </td>

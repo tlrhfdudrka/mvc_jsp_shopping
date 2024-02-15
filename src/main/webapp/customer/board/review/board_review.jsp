@@ -74,14 +74,16 @@ $(function(){
 									<tr>
 										<td class="top-border" style="width: 100%">
 									</tr>
-									<tr>
-										<td colspan="15" align="center">
-											<input type="hidden" name="hidden_num" value="${dto.review_num}">
-											<input type="button" class="write-btn-2" value="수정" id="btnUpdate">
-											<input type="button" class="write-btn-2" value="삭제" id="btnDelete">
-											<input type="button" class="write-btn" value="목록" id="btnInsert">
-										</td>
-									</tr>
+									<c:if test="${sessionScope.sessionID != null}"> 
+										<tr>
+											<td colspan="15" align="center">
+												<input type="hidden" name="hidden_num" value="${dto.review_num}">
+												<input type="button" class="write-btn-2" value="수정" id="btnUpdate">
+												<input type="button" class="write-btn-2" value="삭제" id="btnDelete">
+												<input type="button" class="write-btn" value="목록" id="btnInsert">
+											</td>
+										</tr>
+									</c:if>
 									<tr>
 										<td class="bottom-border" style="width: 100%">
 									</tr>

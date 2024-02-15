@@ -16,10 +16,6 @@ public interface ReviewService {
 	public void reviewDetailAction(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;
 	
-	// 리뷰 게시글 수정 삭제시 비밀번호 인증
-	public int password_chkAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException;
-	
 	// 리뷰 게시글 수정처리 화면
 	public void ReviewUpdate(HttpServletRequest req, HttpServletResponse res)
 			throws ServletException, IOException;	

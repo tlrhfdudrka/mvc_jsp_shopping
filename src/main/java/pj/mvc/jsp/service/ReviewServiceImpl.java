@@ -75,27 +75,6 @@ public class ReviewServiceImpl implements ReviewService {
 		
 	}
 
-	// 리뷰 게시글 수정 삭제시 비밀번호 인증
-	@Override
-	public int password_chkAction(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		System.out.println("서비스 - password_chkAction");
-		
-		// 3단계. 화면에서 입력받은 값, hidden을 가져온다.
-		
-		
-		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
-		ReviewDAO dao = ReviewDAOImpl.getInstance();
-		
-		// 5-1단계. 게시글 수정 삭제시 비밀번호 인증
-		
-		
-		// 5-2단계. 게시글 상세페이지 => 수정페이지에 뿌린다.
-
-		// 6단계. jsp로 처리결과 전달
-		
-		return 0;
-	}
 	
 	// 리뷰 게시글 수정처리 화면
 	@Override

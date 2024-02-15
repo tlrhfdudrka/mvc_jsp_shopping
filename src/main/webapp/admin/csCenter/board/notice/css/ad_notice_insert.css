@@ -156,6 +156,8 @@ td.bottom-border {
 }
 
 .table_div textarea{
+	font-family: sans-serif;
+	padding: 15px;
 	height:300px;
 	margin-bottom: 5px;
 	margin-top: 5px;

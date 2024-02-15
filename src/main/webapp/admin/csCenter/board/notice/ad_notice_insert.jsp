@@ -99,12 +99,6 @@
 		                                  <textarea rows="5" cols="93" name="notice_content" id="notice_content" onchange="handleTextarea()"></textarea>
 		                               </td>
 		                           </tr>
-		                           <!-- <tr>
-			                            <th id="fileLabel" style="width: 60px" > 첨부파일 </th>
-			                            <td colspan="2">
-											<input type="file" name="pd_file" id="pd_file" style="width: 100%;" value="파일첨부">
-										</td>
-			                        </tr> -->
 									<tr>
 										<td colspan="5" align="center">
 											<input type="hidden" name="notice_num" value="${dto.notice_num}">

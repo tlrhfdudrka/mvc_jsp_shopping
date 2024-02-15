@@ -147,9 +147,6 @@ public class PagingNotice {
       startRow = (currentPage - 1) * pageSize + 1;  // 페이지당 시작번호 => start
       endRow = currentPage * pageSize;   // 페이지당 끝번호 => end
       
-//      System.out.println("startRow : " + startRow);
-//      System.out.println("endRow : " + endRow);
-      
       this.number = count - (currentPage - 1) * pageSize;   // 페이지번호
       
       // 페이지 계산
@@ -159,12 +156,13 @@ public class PagingNotice {
    public void pageCalculator() {
 	    if(count > 0) {
 	        pageCount = count / pageSize + (count % pageSize == 0 ? 0 : 1);
-	        startPage = ((currentPage - 1) / 10) * 10 + 1; // 수정된 부분
-	        startPage = Math.max(startPage, 1); // 추가된 부분
+	        startPage = ((currentPage - 1) / 10) * 10 + 1; 
+	        startPage = Math.max(startPage, 1); 
 	        
-	        // gpt 추가
+	        // startPage가 1보다 작아지지 않도록 설정
+	        // startPage 값이 1보다 작을 경우에는 값을 1로 설정 또는 항상 1 이상의 값을 유지
 	        if (startPage < 1) {
-	            startPage = 1; // Ensure startPage is never less than 1
+	            startPage = 1; // Ensure startPage is never less than 1 
 	        }
 	        
 	        pageBlock = 2;
@@ -174,13 +172,15 @@ public class PagingNotice {
 
 	        // 이전
 	        prev = startPage - 1;
-	        prev = Math.max(prev, 1); // 추가된 부분
+	        prev = Math.max(prev, 1); 
 	        
 	        // 다음
 	        next = startPage + 1;
 	        
-	        // Ensure next is within the valid range
-	        next = Math.min(next, pageCount); // 추가된 부분
+	        // next와 pageCount 중 작은 값 반환
+	        // next가 pageCount보다 큰 경우에 next를 pageCount로 설정하여 유효한 범위 내에 있도록 설정
+	        // next가 항상 페이지 수를 초과하지 않고 유효한 범위 내에 있도록 설정
+	        next = Math.min(next, pageCount); 
 	    }
 	}
 

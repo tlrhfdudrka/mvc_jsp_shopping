@@ -60,17 +60,17 @@
 										<!-- 페이징 처리 -->
 										<!-- 이전 버튼 활성화 -->
 										<c:if test="${paging2.startPage > 10}">
-											<a href="${path}/product_Bottom.uspd?pageNum=${paging2.prev}">◀</a>
+											<a href="${path}/product_Bottom.uspd?category_num=3&pageNum=${paging2.prev}">◀</a>
 										</c:if>
 										
 										<!-- 페이지 번호 처리 -->
 										<c:forEach var="num" begin="${paging2.startPage}" end="${paging2.endPage}">
-											<a href="${path}/product_Bottom.uspd?pageNum=${num}">${num}</a>
+											<a href="${path}/product_Bottom.uspd?category_num=3&pageNum=${num}">${num}</a>
 										</c:forEach>
 										
 										<!-- 다음 버튼 활성화 -->
 										<c:if test="${paging2.endPage < paging2.pageCount}">
-											<a href="${path}/product_Bottom.uspd?pageNum=${paging2.next}">▶</a>
+											<a href="${path}/product_Bottom.uspd?category_num=3&pageNum=${paging2.next}">▶</a>
 										</c:if>
 									</li>
 								</ul>

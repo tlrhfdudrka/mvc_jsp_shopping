@@ -23,6 +23,9 @@
 		          <li><a href="${path}/product_Outer.uspd?category_num=1">Outer</a></li>
 		          <li><a href="${path}/product_Top.uspd?category_num=2">Top</a></li>
 		          <li><a href="${path}/product_Bottom.uspd?category_num=3">Bottom</a></li>
+		          <c:if test="${sessionScope.sessionID == 'admin01'}">
+				  	<li><a href="${path}/*.pd">Admin</a></li>
+				  </c:if>
 		      </ul>
 		</div>
 		

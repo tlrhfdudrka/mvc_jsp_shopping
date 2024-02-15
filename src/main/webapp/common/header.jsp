@@ -46,13 +46,11 @@
 		      <ul class="menubars-ac">
 		      	  <c:if test="${sessionScope.sessionID == null}">
 				  	<li><a href="${path}/login.do">Login</a></li>
+				  	<li><a href="${path}/join.do">Join</a></li>
 				  </c:if>
 		          <c:if test="${sessionScope.sessionID != null}">
 				  	<li><a href="${path}/logout.do">Logout</a></li>
 				  </c:if>
-		          <li><a href="${path}/join.do">Register</a></li>
-		          <li><a href="${path}/customer/order/orderList.jsp">Order</a></li>
-		          <li><a href="${path}/customer/mypage/mypage.jsp">Mypage</a></li>
 		      </ul>
 		 </div>
 		<!-- 세션값이 없을때 (로그인 X) -->

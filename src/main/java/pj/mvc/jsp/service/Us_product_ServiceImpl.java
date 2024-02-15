@@ -22,14 +22,29 @@ public class Us_product_ServiceImpl implements Us_product_Service {
 		System.out.println("Us_product_ServiceImpl - usListAction");
 		
 		String pageNum = req.getParameter("pageNum");
-		int category_num = Integer.parseInt(req.getParameter("category_num")); 
-		System.out.println("category_num : " + req.getParameter("category_num"));
+		String category_num = req.getParameter("category_num"); 
+	    int category = 0;
+	    
+	    if ("1".equals(category_num)) {
+	    	
+	        category = 1;
+	        
+	    } else if ("2".equals(category_num)) {
+	    	
+	        category = 2;
+	        
+	    } else if ("3".equals(category_num)) {
+	    	
+	        category = 3;
+	    }
+		
+		System.out.println("category : " + category);
 		
 		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
 		Us_product_DAO dao = Us_product_DAOImpl.getInstance();
 	    
 	    // 5-1단계. 상품 개수
-	    int total = dao.usCnt(category_num);
+	    int total = dao.usCnt(category);
 	    System.out.println("total : " + total);
 	    
 	    us_Paging2 us_Paging2 = new us_Paging2(pageNum);
@@ -37,36 +52,39 @@ public class Us_product_ServiceImpl implements Us_product_Service {
 	    
 	    us_Paging2.setTotalCount(total);
 	    
+	    int start = us_Paging2.getStartRow();
+		int end = us_Paging2.getEndRow();
+	    
 	    // 5-2단계. 상품 목록
-	    List<Us_product_DTO> list = dao.usListAction();
+	    List<Us_product_DTO> list = dao.usListAction(start, end);
 	    
 	    // 6단계. jsp로 처리결과 전달
 	    req.setAttribute("paging2", us_Paging2);
 	    req.setAttribute("list", list);
 	}
 
-	// 상품 상세페이지
-	@Override
-	public void usListDetailAction(HttpServletRequest req, HttpServletResponse res) 
-			throws ServletException, IOException {
-		
-		System.out.println("Us_product_ServiceImpl - usListDetailAction");
-		
-		// 3단계. get방식에서 입력받은 값(ad_product_list.jsp에서 수정버튼 클릭시 넘어가는 url에서 넘긴 값)을 가져온다
-		int pd_num = Integer.parseInt(req.getParameter("pd_num"));  // WHERE절에 태우기 위함
-		int pageNum = Integer.parseInt(req.getParameter("pageNum")); // 해당페이지의 목록으로 가기 위해 pageNum을 가져온것
-		
-		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
-		Us_product_DAO dao = Us_product_DAOImpl.getInstance();
-				
-		// 5단계. 상품 상세 페이지
-		Us_product_DTO dto = dao.udDetailList(pd_num);
-		System.out.println("dto : " + dto);
-		
-		// 6단계. jsp로 처리결과 전달
-		req.setAttribute("pageNum", pageNum);
-		req.setAttribute("pd_num", pd_num);
-		req.setAttribute("dto", dto);
-	}
+		// 상품 상세페이지
+		@Override
+		public void usListDetailAction(HttpServletRequest req, HttpServletResponse res) 
+				throws ServletException, IOException {
+			
+			System.out.println("Us_product_ServiceImpl - usListDetailAction");
+			
+			// 3단계. get방식에서 입력받은 값(ad_product_list.jsp에서 수정버튼 클릭시 넘어가는 url에서 넘긴 값)을 가져온다
+			int pd_num = Integer.parseInt(req.getParameter("pd_num"));  // WHERE절에 태우기 위함
+			int pageNum = Integer.parseInt(req.getParameter("pageNum")); // 해당페이지의 목록으로 가기 위해 pageNum을 가져온것
+			
+			// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
+			Us_product_DAO dao = Us_product_DAOImpl.getInstance();
+					
+			// 5단계. 상품 상세 페이지
+			Us_product_DTO dto = dao.udDetailList(pd_num);
+			System.out.println("dto : " + dto);
+			
+			// 6단계. jsp로 처리결과 전달
+			req.setAttribute("pageNum", pageNum);
+			req.setAttribute("pd_num", pd_num);
+			req.setAttribute("dto", dto);
+		}
 
 }

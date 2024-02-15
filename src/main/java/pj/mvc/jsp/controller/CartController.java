@@ -143,7 +143,7 @@ public class CartController extends HttpServlet {
 		}
 		
 		// 장바구니에 상품 추가 처리페이지
-		else if(url.equals("/cartAddAction.ct")) { // cartAddAction.ct : 예진언니 상세페이지에서 이 주소로 넘겨야함, 상품번호(pk)도 갖고가야함 
+		else if(url.equals("/cartAddAction.ct")) {
 			System.out.println("<< 컨트롤러 url : /*.ct || /cartAddAction.ct >>");
 			
 			service.cartPdAddAction(req, res);

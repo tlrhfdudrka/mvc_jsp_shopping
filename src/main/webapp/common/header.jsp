@@ -23,6 +23,9 @@
 		          <li><a href="${path}/product_Outer.uspd?category_num=1">Outer</a></li>
 		          <li><a href="${path}/product_Top.uspd?category_num=2">Top</a></li>
 		          <li><a href="${path}/product_Bottom.uspd?category_num=3">Bottom</a></li>
+		          <c:if test="${sessionScope.sessionID == 'admin01'}">
+				  	<li><a href="${path}/*.pd">Admin</a></li>
+				  </c:if>
 		      </ul>
 		</div>
 		
@@ -41,7 +44,12 @@
 	    <input id="check-btn-ac" type="checkbox" />
 		    <label class="menu_ac" for="check-btn-ac">Account</label>
 		      <ul class="menubars-ac">
-		          <li><a href="${path}/login.do">Login</a></li>
+		      	  <c:if test="${sessionScope.sessionID == null}">
+				  	<li><a href="${path}/login.do">Login</a></li>
+				  </c:if>
+		          <c:if test="${sessionScope.sessionID != null}">
+				  	<li><a href="${path}/logout.do">Logout</a></li>
+				  </c:if>
 		          <li><a href="${path}/join.do">Register</a></li>
 		          <li><a href="${path}/customer/order/orderList.jsp">Order</a></li>
 		          <li><a href="${path}/customer/mypage/mypage.jsp">Mypage</a></li>

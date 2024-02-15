@@ -114,18 +114,6 @@ function delivery_input_chk() {
 							</tr>
 							</c:forEach>
 							
-							
-							<%-- <tr>
-								<td class="order_pd_td1">
-									<img class="pd_img" src="${path}/bag/product1.png">
-								</td>
-								<td class="order_pd_td2">
-									<p class="order_pd_td2_p1">Dear knit_ivory</p>
-									<p class="order_pd_td2_p2">수량: 1개</p>
-									<p class="order_pd_td2_p3">108,000원</p>
-								</td>
-							</tr> --%>
-							
 							<tr>
 								<td colspan="2"> 
 								</td>
@@ -200,13 +188,7 @@ function delivery_input_chk() {
 									<input type="submit" name="payment_btn" value="결제하기" id="payment_btn">
 								</td>
 							</tr>
-							<!-- 업데이트 성공시 -->
-							<%-- <c:if test="${updateCnt != 0}">
-								<script type="text/javascript">
-									alert("결제가 완료되었습니다.");
-									window.location="${path}/cartList.ct";
-								</script>
-							</c:if> --%>
+							
 						</table>
 					</div>
 					<!-- 결제버튼 및 동의문구 끝 -->

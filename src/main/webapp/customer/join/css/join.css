@@ -11,8 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  overflow-y: scroll; 
-  max-height: 200px;
+  max-height: 100px;
 }
 
 #join-form {
@@ -23,14 +22,14 @@ body {
     padding-bottom: 100px;
 }
 
-#contents{
-	margin-top: -50px;
-}
-
-
 /*sign in,create account 전체  */
 .caption{
 	margin-bottom:40px;
+	margin-left:-20px;
+}
+
+#contents{
+	margin-top: -80px;
 }
 
 /*sign in*/
@@ -83,7 +82,7 @@ body {
 /*Account ID,Account Password   */
 .int-area label {
   position: absolute;
-  left: 10px;
+  left: 0px;
   top: 15px;
   font-size: 10px;
   font-weight:bold;
@@ -157,9 +156,10 @@ hr {
 
 /*이용약관 버튼  */
     .accordion-button {
-      width: 134%;
-      padding: 10px;
+      width: 135%;
+      padding: 11px;
       text-align: left;
+      padding-left:1;
       cursor: pointer;
       border: none;
       border-bottom: 1px solid black;
@@ -193,14 +193,14 @@ hr {
 /*sign in,버튼 전체 */
 .btn-area {
   margin-top: 30px;
-  margin-right:50px;
+  margin-right:55px;
+   
 }
 
 /*sign in 버튼  */
 #btn {
-  width: 400px;
+  width: 405px;
   height: 45px;
-  margin: 0px 10px;
   color: #fff;
   background: black;
   font-size: 15px;

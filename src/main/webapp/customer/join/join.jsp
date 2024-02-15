@@ -3,6 +3,16 @@
 <%@include file="/common/setting.jsp" %>
 <!DOCTYPE html>
 <html>
+<script>
+    function validateForm() {
+        var agreement = document.getElementById("check_all").checked;
+        if (!agreement) {
+            alert("이용약관에 동의해야 합니다.");
+            return false; // 폼 제출 막음
+        }
+        return true; // 폼 제출 허용
+    }
+</script>
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
@@ -30,7 +40,7 @@
 				<label class="join_check">회원인증</label>
 				
 		          
-		       <form action="joinAction.do"  method="post">
+		       <form action="joinAction.do"  method="post" onsubmit="return validateForm()">
 		            <div class="int-area">
 		                <input type="text" name="user_id" id="id" autocomplete="off" required>
 		                <label for="id">ID</label>
@@ -77,7 +87,7 @@
 		         <div class="accordion-section">
 		  			<label for="check_all" class="check_all">모두 동의합니다.</label>
 					<div class="all_agree">
-					  <input type="checkbox" id="check_all" /> 동의함
+					  <input type="checkbox" id="check_all" required/> 동의함
 					</div>
 					<hr>
 					
@@ -86,7 +96,7 @@
 		   		  </button>
 		 			
 				  <div id="section2" class="accordion-content">
-				    <p>제1조(목적)
+				     <p>제1조(목적)
 						이 약관은 OO 회사(전자상거래 사업자)가 운영하는 OO 사이버 몰(이하 “몰”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 몰과 이용자의 권리.의무 및 책임사항을 규정함을 목적으로 합니다.
 						※「PC통신, 무선 등을 이용하는 전자상거래에 대해서도 그 성질에 반하지 않는 한 이 약관을 준용합니다.」
 						제2조(정의)
@@ -224,7 +234,7 @@
 						① “몰”과 이용자 간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 이용자의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.
 						② “몰”과 이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
 						부 칙(시행일) 이 약관은 년 월 일부터 시행합니다. 부 칙(시행일) 이 약관은 년 월 일부터 시행합니다.
-					</p>
+					</p> 
 				  </div>
 					
 					 
@@ -233,7 +243,7 @@
 		  		</button>
 		 			
 				<div id="section3" class="accordion-content">
-				 <p>** 본 양식은 쇼핑몰 운영에 도움을 드리고자 샘플로 제공되는 서식으로 쇼핑몰 운영형태에 따른 수정이 필요합니다. 쇼핑몰에 적용하시기 전, 쇼핑몰 운영 사항 등을 확인하시고 적절한 내용을 반영하여 사용하시기 바랍니다. **
+					 <p>** 본 양식은 쇼핑몰 운영에 도움을 드리고자 샘플로 제공되는 서식으로 쇼핑몰 운영형태에 따른 수정이 필요합니다. 쇼핑몰에 적용하시기 전, 쇼핑몰 운영 사항 등을 확인하시고 적절한 내용을 반영하여 사용하시기 바랍니다. **
 						1. 개인정보 수집목적 및 이용목적
 						가. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산
 						콘텐츠 제공 , 구매 및 요금 결제 , 물품배송 또는 청구지 등 발송 , 금융거래 본인 인증 및 금융 서비스
@@ -258,7 +268,7 @@
 						-보존이유: 통신비밀보호법
 						-보존기간 : 3개월
 						※ 동의를 거부할 수 있으나 거부시 회원 가입이 불가능합니다.
-				</p>
+				</p> 
 				</div>
 					
 					

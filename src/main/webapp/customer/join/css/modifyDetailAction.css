@@ -44,11 +44,11 @@ body {
 /*아이디 비번 등등 항목 */
 .int-area input {
   width: 100%;
-  padding: 20px 10px 10px;
+  padding: 32px 10px 10px;
   background-color: transparent;
   border: none;
   border-bottom: 1px solid black;
-  font-size: 18px;
+  font-size: 15px;
   outline: none;
   order: -1;
 }
@@ -64,10 +64,6 @@ body {
   width: 100%;
 }
 
-/*아이디 밑 getUser_id*/
-.ant{
-	
-}
 
 /*(영문 대소문자/숫자/특수문자 중 2가지 이상 조합,10자~16자) */
 .pw{
@@ -98,12 +94,7 @@ body {
   }
 }
 
-.int-area input:focus + label,
-.int-area input:valid + label {
-  top: -2px;
-  font-size: 13px;
-  color: #166caa;
-}
+
 
 
 /*핸드폰 번호 */
@@ -113,8 +104,8 @@ body {
 }
 
 .int_mobile_area input {
-    width: 70%;
-    padding: 20px 10px 10px;
+    width: 100%;
+    padding: 35px 10px 10px;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid black;
@@ -130,14 +121,6 @@ body {
   transition: top 0.5s ease;
   width: calc(100% - 20px);
 }
-
-.int_mobile_area input:focus + label,
-.int_mobile_area input:valid + label {
-  top: -2px;
-  font-size: 13px;
-  color: #166caa;
-}
-
 
 
 /* 생일 */
@@ -196,6 +179,7 @@ body {
   text-align: center;
   color: white;
   margin: 0 6px;
+  border-radius:4px;
 }
 
 /* 첫버튼 */

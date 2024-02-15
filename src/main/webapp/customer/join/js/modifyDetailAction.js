@@ -43,13 +43,7 @@ function no() {
 }
 	
 	
-	//취소 버튼 클릭시 메인으로
-	 function main() {
-            // JOIN US 버튼 클릭 시 회원가입 페이지로 이동
-            let link = "../main/index.jsp";
-        	window.open(link);
-        }
- 
+		
  
  
  

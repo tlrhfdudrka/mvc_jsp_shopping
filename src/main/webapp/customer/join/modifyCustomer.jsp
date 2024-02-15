@@ -15,20 +15,13 @@
 
 </head>
 <body>
-	<div class="wrap">
 			<!--header  -->
 			<%@ include file="/common/header.jsp" %>
 			
-			<!--컨텐츠 시작  -->
+			<div class="wrap">
 			
+			<!--컨텐츠 시작  -->
 			<div id="login-form">
-				<div id="contents">
-				<div class="caption">
-		  		<a href="" class="create-account">SIGN IN</a>
-		  		<a href="${path}/join/join.jsp" class="create-account_2">CREATE ACCOUNT</a>
-				</div>
-		        
-		        
 		        <form name="loginform" action="modifyDetailAction.do" method="post">
 		           
 		           
@@ -43,14 +36,11 @@
 		                <button id="button" type="submit" >회원수정</button>
 		                <button id="button_2" type="reset" onclick="main()">수정취소</button>
 		            </div>
-		</form>
+			</form>
 	</div>
 </div>
+
 		<!--footer  -->
 		<%@ include file="/common/footer.jsp" %>
-</div>
-
-
-
 </body>
 </html>

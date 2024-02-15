@@ -18,6 +18,13 @@
 		
 		    return true;
 		}
+		
+		//조인어스 버튼 클릭시 넘어가기
+        function join() {
+            // JOIN US 버튼 클릭 시 회원가입 페이지로 이동
+            let link = "join/join.do";
+        	window.open(link);
+        }
         
    //수정 버튼 클릭시 넘어가기
         function main() {

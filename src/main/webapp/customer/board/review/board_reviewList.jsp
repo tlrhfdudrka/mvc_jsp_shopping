@@ -64,10 +64,12 @@
 											<td class="bottom-border"> <br>  </td>
 										</tr>
 									</c:forEach>
+									<c:if test="${sessionScope.sessionID != null}"> 
 									<tr>
 										<td colspan="5" align="center"><input type="button"
 											class="write-btn" value="글작성" id="btnInsert"></td>
 									</tr>
+									</c:if>
 									<tr>
 										<td class="paging" colspan="5" align="center">
 											<!-- 페이징 처리 -->

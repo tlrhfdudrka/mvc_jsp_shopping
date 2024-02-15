@@ -61,8 +61,8 @@
 
 /* 글쓰기 버튼 */
 .write-btn {
-   margin-top:3px;
-   /* float: right; */
+   margin-top:15px;
+   float: right;
    background-color: black;
   /*  margin: 0 auto; */
    font-size: 12px;

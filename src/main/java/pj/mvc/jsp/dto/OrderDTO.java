@@ -13,8 +13,6 @@ public class OrderDTO {
 	private String depositor;        // 입금자명
 	private Date order_date;         // 주문날짜
 	
-	//private int pd_cnt;              // 주문상품개수
-	//private int price_sum;           // 총결제금액
 	private int cart_num;			 // 장바구니 번호
 	private int pd_num;              // 상품 번호
 	private int cart_cnt;            // 상품수량
@@ -89,22 +87,6 @@ public class OrderDTO {
 	public void setOrder_date(Date order_date) {
 		this.order_date = order_date;
 	}
-
-//	public int getPd_cnt() {
-//		return pd_cnt;
-//	}
-
-//	public void setPd_cnt(int pd_cnt) {
-//		this.pd_cnt = pd_cnt;
-//	}
-
-//	public int getPrice_sum() {
-//		return price_sum;
-//	}
-
-//	public void setPrice_sum(int price_sum) {
-//		this.price_sum = price_sum;
-//	}
 	
 	public int getCart_num() {
 		return cart_num;

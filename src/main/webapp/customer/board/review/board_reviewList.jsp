@@ -73,7 +73,7 @@
 											<!-- 페이징 처리 -->
 											 <!-- 이전 버튼 활성화 --> 
 											 <c:if	test="${paging.startPage > 0}">
-												<a href="${path}/board_reviewList.rw?pageNum=${paging.prev}"><i class="fa-solid fa-angle-left"></i></a>
+												<a href="${path}/board_reviewList.rw?pageNum=${paging.prev}"><!-- <i class="fa-solid fa-angle-left"></i> --></a>
 											</c:if>
 											
 											 <!-- 페이지 번호 처리 -->

@@ -16,10 +16,6 @@
 
 	<div id="header"><%@include file="/common/header.jsp" %></div>
 	<div class="wrap">
-		
-		<!-- <div class="main_img">
-			<img src="img/240108webmain.jpg" style="width:100%">
-		</div> -->
 		<div class="main_visula">
 			<video autoplay loop muted style="width: 100%;">
 				<source src="https://player.vimeo.com/progressive_redirect/playback/889803908/rendition/1080p/file.mp4?loc=external&signature=6b8c8fa8458013e78950fb40990934e67a0a477c9fb27d050d7bef7e7b470029" type="video/mp4">

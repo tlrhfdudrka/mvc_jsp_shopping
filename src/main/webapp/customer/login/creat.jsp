@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>가입후</title>
+<title>가입후</title>C
 <!--반응형 웹  -->
 <meta name="viewport" content="width=device-width,initial-scale =1">
 <link rel="stylesheet" href="${path}/common/css/header.css" />

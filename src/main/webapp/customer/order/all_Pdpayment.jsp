@@ -115,17 +115,6 @@ function delivery_input_chk() {
 							</tr>
 							</c:forEach>
 							
-							<%-- <tr>
-								<td class="order_pd_td1">
-									<img class="pd_img" src="${path}/bag/product1.png">
-								</td>
-								<td class="order_pd_td2">
-									<p class="order_pd_td2_p1">Dear knit_ivory</p>
-									<p class="order_pd_td2_p2">수량: 1개</p>
-									<p class="order_pd_td2_p3">108,000원</p>
-								</td>
-							</tr> --%>
-							
 							<tr>
 								<td colspan="2"> 
 								</td>

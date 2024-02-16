@@ -67,36 +67,6 @@ public class NoticeServiceImpl implements NoticeService {
 		req.setAttribute("dto", dto);
 	}
 
-	/*
-	// 게시글 수정 삭제시 비밀번호 인증
-	@Override
-	public int notice_pwd_chkAciton(HttpServletRequest req, HttpServletResponse res)
-			throws ServletException, IOException {
-		System.out.println("서비스 - notice_pwd_chkAciton");
-		
-		// 3단계. 화면에서 입력받은 값, hidden을 가져온다.
-		int num = Integer.parseInt(req.getParameter("hidden_num"));
-		String password = req.getParameter("notice_pwd");
-		System.out.println("글번호 : " + num + ", 비밀번호 : " + password);
-		
-		// 4단계. 싱글톤방식으로 DAO 객체 생성, 다형성 적용
-		NoticeDAO dao = NoticeDAOImpl.getInstance();
-		
-		// 5-1단계. 게시글 수정 삭제시 비밀번호 인증
-		int result = dao.notice_pwd_chkAciton(num, password);
-		
-		NoticeDTO dto = null;
-		if(result != 0) {
-			// 5-2단계. 게시글 상세페이지 = > 수정페이지에 뿌린다.
-			dto = dao.getNoticeDetail(num);
-		}
-		// 6단계. jsp로 처리결과 전달
-		req.setAttribute("dto", dto);
-		
-		return result;
-	}
-	*/
-
 	// 게시글 수정처리
 	@Override
 	public void noticeUpdateAction(HttpServletRequest req, HttpServletResponse res)

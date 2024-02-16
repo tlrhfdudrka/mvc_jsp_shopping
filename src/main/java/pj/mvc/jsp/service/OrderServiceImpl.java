@@ -20,7 +20,6 @@ public class OrderServiceImpl implements OrderService{
 		System.out.println("<< 서비스 - selectPdOrderBefore(req, res) >>");
 		
 		String user_id = (String)req.getSession().getAttribute("sessionID");
-		//String  user_id = "user01";
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
@@ -41,7 +40,6 @@ public class OrderServiceImpl implements OrderService{
 		System.out.println("<< 서비스 - selectPdOrderPayment(req, res) >>");
 		
 		String user_id = (String)req.getSession().getAttribute("sessionID");
-		//String  user_id = "user01";
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
@@ -58,7 +56,6 @@ public class OrderServiceImpl implements OrderService{
 		System.out.println("<< 서비스 - allPdOrderBefore(req, res) >>");
 		
 		String user_id = (String)req.getSession().getAttribute("sessionID");
-		//String  user_id = "user01";
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		
@@ -78,7 +75,6 @@ public class OrderServiceImpl implements OrderService{
 		System.out.println("<< 서비스 - allPdOrderPayment(req, res) >>");
 		
 		String user_id = (String)req.getSession().getAttribute("sessionID");
-		// String  user_id = "user01";
 		
 		OrderDAOImpl dao = OrderDAOImpl.getInstance();
 		

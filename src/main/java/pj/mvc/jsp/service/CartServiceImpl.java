@@ -20,7 +20,6 @@ public class CartServiceImpl implements CartService{
 		System.out.println("<< 서비스 - cartPdListAction(req, res) >>");
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
-		//String s_user_id = "user01"; // 세션값 가져오기 
 		
 		CartDAO dao = CartDAOImpl.getInstance();
 		
@@ -96,7 +95,6 @@ public class CartServiceImpl implements CartService{
 		System.out.println("<< 서비스 - cart_pdchk_bottom(req, res) >>");
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
-		// String s_user_id = "user01"; // 세션값 가져오기 
 		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
 		System.out.println("pd_num : " + pd_num);
@@ -115,7 +113,6 @@ public class CartServiceImpl implements CartService{
 		System.out.println("<< 서비스 - cart_pdchk_outer(req, res) >>");
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
-		//String s_user_id = "user01"; // 세션값 가져오기 
 		
 		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
@@ -133,7 +130,6 @@ public class CartServiceImpl implements CartService{
 		System.out.println("<< 서비스 - cart_pdchk_top(req, res) >>");
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
-		// String s_user_id = "user01"; // 세션값 가져오기 
 		
 		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
 		
@@ -152,15 +148,12 @@ public class CartServiceImpl implements CartService{
 		System.out.println("<< 서비스 - cartPdAddAction(req, res) >>");
 		
 		String s_user_id = (String)req.getSession().getAttribute("sessionID");
-		//String s_user_id = "user01"; // 세션값 가져오기
 		
 		int pd_num = Integer.parseInt(req.getParameter("pd_num")); // getparameter로  상품상세페이지에서 받은 값 가져올 것 
-//		int cart_cnt = Integer.parseInt(req.getParameter("cart_cnt"));
 		
 		CartDTO dto = new CartDTO();
 		dto.setUser_id(s_user_id);
 		dto.setPd_num(pd_num);
-//		dto.setCart_cnt(cart_cnt);
 		
 		CartDAO dao = CartDAOImpl.getInstance();
 		

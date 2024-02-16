@@ -105,85 +105,89 @@ public class Us_product_DAOImpl implements Us_product_DAO {
 	}
 	
 	// 모든 상품 조회
-	@Override
-	public List<Us_product_DTO> usListAction() {
-		
-		System.out.println("Us_product_DAOImpl - usList");
-		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs =  null;
-		List<Us_product_DTO> list = new ArrayList<Us_product_DTO>();
-		
-		String sql = "SELECT * "
-				+ "  FROM ("
-				+ "        SELECT A.*, "
-				+ "            rownum AS rn "
-				+ "          FROM "
-				+ "           ("
-				+ "             SELECT * "
-				+ "             FROM pj_product_tbl "
-				+ "					where show='y' "
-				+ "             ORDER BY pd_num DESC "
-				+ "           ) A"
-				+ "       ) ";
-		
-		try {
+		@Override
+		public List<Us_product_DTO> usListAction(int start, int end) {
 			
-			conn = dataSource.getConnection();
-			pstmt = conn.prepareStatement(sql);
-
-			rs = pstmt.executeQuery();
+			System.out.println("Us_product_DAOImpl - usList");
 			
-			while(rs.next()) {
-				
-				Us_product_DTO dto = new Us_product_DTO();
-				
-				dto.setPd_num(rs.getInt("pd_num"));
-				dto.setCategory_num(rs.getInt("category_num"));
-				dto.setPd_name(rs.getString("pd_name"));
-				dto.setPd_price(rs.getInt("pd_price"));
-				dto.setPd_stuck(rs.getInt("pd_stuck"));
-				dto.setPd_content(rs.getString("pd_content"));
-				dto.setPd_img1(rs.getString("pd_img1"));
-				dto.setPd_img2(rs.getString("pd_img2"));
-				dto.setPd_detail_img(rs.getString("pd_detail_img"));
-				dto.setPd_register(rs.getDate("pd_register"));
-				
-				list.add(dto);
-			}
-			
-		} catch (SQLException e) {
-			
-			e.printStackTrace();
-			
-		} finally {
+			Connection conn = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs =  null;
+			List<Us_product_DTO> list = new ArrayList<Us_product_DTO>();
 			
 			try {
 				
-				if(conn != null) {
-					
-					conn.close();
-				}
+				conn = dataSource.getConnection();
 				
-				if(pstmt != null) {
-					
-					pstmt.close();
-				}
+				String sql = "SELECT * "
+						+ "  FROM ("
+						+ "        SELECT A.*, "
+						+ "            rownum AS rn "
+						+ "          FROM "
+						+ "           ("
+						+ "             SELECT * "
+						+ "             FROM pj_product_tbl "
+						+ "					where show='y' "
+						+ "             ORDER BY pd_num DESC "
+						+ "           ) A"
+						+ "       ) "
+						+ " WHERE rn BETWEEN ? AND ?";
 				
-				if(rs != null) {
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, start);
+				pstmt.setInt(2, end);
+
+				rs = pstmt.executeQuery();
+				
+				while(rs.next()) {
 					
-					rs.close();
+					Us_product_DTO dto = new Us_product_DTO();
+					
+					dto.setPd_num(rs.getInt("pd_num"));
+					dto.setCategory_num(rs.getInt("category_num"));
+					dto.setPd_name(rs.getString("pd_name"));
+					dto.setPd_price(rs.getInt("pd_price"));
+					dto.setPd_stuck(rs.getInt("pd_stuck"));
+					dto.setPd_content(rs.getString("pd_content"));
+					dto.setPd_img1(rs.getString("pd_img1"));
+					dto.setPd_img2(rs.getString("pd_img2"));
+					dto.setPd_detail_img(rs.getString("pd_detail_img"));
+					dto.setPd_register(rs.getDate("pd_register"));
+					
+					list.add(dto);
 				}
 				
 			} catch (SQLException e) {
 				
 				e.printStackTrace();
+				
+			} finally {
+				
+				try {
+					
+					if(conn != null) {
+						
+						conn.close();
+					}
+					
+					if(pstmt != null) {
+						
+						pstmt.close();
+					}
+					
+					if(rs != null) {
+						
+						rs.close();
+					}
+					
+				} catch (SQLException e) {
+					
+					e.printStackTrace();
+				}
 			}
+			
+			  return list;
 		}
-		
-		  return list;
-	}
 
 	// 상품 상세 정보 가져오기
 	@Override

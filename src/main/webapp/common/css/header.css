@@ -6,11 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-/* 드롭다운메뉴 */
-/* #check-btn { 
-	display: none;
-} */
+}
 
 #check-btn-shop { 
 	display: none;
@@ -58,6 +54,7 @@
 /* 로고 */
 .logo {
 	user-select: none; 	/* 드래그방지 */
+	font-family: 'Nanum Myeongjo', serif;
 }
 
 .logo a{
@@ -135,6 +132,23 @@
 	text-decoration-line: none;
 	text-decoration: none;
 	font-size: 14px;
+}
+
+/* 글꼴설정 */
+.shop {
+	font-family: 'Nanum Myeongjo', serif;
+}
+
+.community {
+	font-family: 'Nanum Myeongjo', serif;
+}
+
+.account {
+	font-family: 'Nanum Myeongjo', serif;
+}
+
+.bag {
+	font-family: 'Nanum Myeongjo', serif;
 }
 
 /* 애니메이션 효과 */
